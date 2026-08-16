@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Алина Бабаян — инженер-сметчик, 25 лет опыта. Alina Babayan — Estimator Engineer, 25 years of experience.">
+<title>Алина Бабаян — инженер-сметчик · резюме</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --baby:#8fd0f2;
+    --baby-mid:#bfe3f8;
+    --baby-soft:#eef8fe;
+    --accent:#3f9bd8;
+    --accent-deep:#2b7fb8;
+    --ink:#123a5c;
+    --ink-soft:#51718c;
+    --white:#ffffff;
+    --line:#dcecf7;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    background:var(--white);
+    color:var(--ink);
+    font-family:'Manrope',sans-serif;
+    font-weight:400;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    -webkit-tap-highlight-color:transparent;
+    overflow-x:hidden;
+  }
+  /* LANGUAGE TOGGLE LOGIC */
+  body.lang-ru .en{display:none}
+  body.lang-en .ru{display:none}
+
+  a{color:inherit}
+  img{max-width:100%}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(255,255,255,.85);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .h-in{
+    max-width:1080px;margin:0 auto;padding:14px 20px;
+    display:flex;justify-content:space-between;align-items:center;gap:14px;
+  }
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .mono{
+    width:42px;height:42px;border-radius:50%;
+    background:linear-gradient(135deg,var(--baby),var(--accent));
+    color:#fff;display:flex;align-items:center;justify-content:center;
+    font-family:'Playfair Display',serif;font-weight:700;font-size:16px;
+    box-shadow:0 6px 16px rgba(63,155,216,.35);flex-shrink:0;
+  }
+  .brand-name{font-family:'Playfair Display',serif;font-weight:600;font-size:17px;letter-spacing:.3px}
+  .brand-sub{font-size:11px;color:var(--ink-soft);letter-spacing:1.5px;text-transform:uppercase}
+  .h-actions{display:flex;align-items:center;gap:10px}
+  .lang-switch{
+    display:flex;background:var(--baby-soft);border:1px solid var(--line);
+    border-radius:50px;padding:4px;
+  }
+  .lang-switch button{
+    border:none;background:transparent;cursor:pointer;
+    padding:7px 16px;border-radius:50px;
+    font-family:'Manrope',sans-serif;font-weight:700;font-size:12px;letter-spacing:1px;
+    color:var(--ink-soft);transition:.3s;
+  }
+  .lang-switch button.active{background:var(--accent);color:#fff;box-shadow:0 4px 12px rgba(63,155,216,.35)}
+  .print-btn{
+    border:1px solid var(--baby-mid);background:#fff;color:var(--accent-deep);
+    border-radius:50px;padding:9px 18px;cursor:pointer;
+    font-family:'Manrope',sans-serif;font-weight:700;font-size:12px;letter-spacing:1px;transition:.3s;
+  }
+  .print-btn:hover{background:var(--baby-soft)}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;overflow:hidden;
+    background:linear-gradient(180deg,#fff 0%,var(--baby-soft) 100%);
+    padding:150px 20px 80px;text-align:center;
+  }
+  .hero::before,.hero::after{
+    content:"";position:absolute;border-radius:50%;pointer-events:none;
+  }
+  .hero::before{width:420px;height:420px;background:radial-gradient(circle,rgba(143,208,242,.35),transparent 70%);top:-120px;left:-120px}
+  .hero::after{width:520px;height:520px;background:radial-gradient(circle,rgba(63,155,216,.18),transparent 70%);bottom:-200px;right:-160px}
+  .hero-in{position:relative;z-index:2;max-width:860px;margin:0 auto}
+  .hero-tag{
+    display:inline-block;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+    color:var(--accent-deep);background:#fff;border:1px solid var(--baby-mid);
+    border-radius:50px;padding:8px 20px;margin-bottom:26px;
+  }
+  .hero h1{
+    font-family:'Playfair Display',serif;font-weight:600;
+    font-size:clamp(38px,7vw,68px);line-height:1.1;margin-bottom:14px;
+  }
+  .hero-role{
+    font-size:clamp(15px,2.4vw,19px);color:var(--accent-deep);
+    font-weight:600;letter-spacing:1px;margin-bottom:18px;
+  }
+  .hero-sum{color:var(--ink-soft);max-width:640px;margin:0 auto 34px;font-size:16px}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+  .chip{
+    display:inline-flex;align-items:center;gap:8px;
+    background:#fff;border:1px solid var(--line);border-radius:50px;
+    padding:10px 18px;font-size:13px;font-weight:600;color:var(--ink);
+    text-decoration:none;transition:.3s;box-shadow:0 4px 14px rgba(18,58,92,.06);
+  }
+  .chip:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .chip .ic{color:var(--accent)}
+
+  /* ---------- STATS ---------- */
+  .stats{
+    max-width:1080px;margin:-40px auto 0;padding:0 20px;position:relative;z-index:3;
+    display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+  }
+  .stat{
+    background:#fff;border:1px solid var(--line);border-radius:18px;
+    padding:26px 18px;text-align:center;box-shadow:0 12px 30px rgba(18,58,92,.08);
+  }
+  .stat b{
+    display:block;font-family:'Playfair Display',serif;font-weight:700;
+    font-size:clamp(24px,3.4vw,34px);color:var(--accent-deep);margin-bottom:6px;
+  }
+  .stat span{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft)}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:90px 20px}
+  .wrap{max-width:1080px;margin:0 auto}
+  .sec-soft{background:var(--baby-soft)}
+  .sec-title{
+    font-family:'Playfair Display',serif;font-weight:600;
+    font-size:clamp(28px,4.6vw,42px);text-align:center;margin-bottom:12px;
+  }
+  .sec-line{width:64px;height:3px;background:linear-gradient(90deg,var(--baby),var(--accent));border-radius:3px;margin:0 auto 18px}
+  .sec-sub{text-align:center;color:var(--ink-soft);max-width:640px;margin:0 auto 56px}
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:26px;align-items:start}
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:20px;
+    padding:34px;box-shadow:0 12px 30px rgba(18,58,92,.06);
+  }
+  .about-txt p{margin-bottom:16px;color:var(--ink-soft);font-size:15.5px}
+  .about-txt p:last-child{margin-bottom:0}
+  .about-txt strong{color:var(--ink)}
+  .details h3{font-family:'Playfair Display',serif;font-size:20px;margin-bottom:18px}
+  .d-row{display:flex;justify-content:space-between;gap:14px;padding:12px 0;border-bottom:1px dashed var(--line);font-size:14px}
+  .d-row:last-child{border-bottom:none}
+  .d-row b{color:var(--ink);font-weight:600;text-align:right}
+  .d-row span{color:var(--ink-soft)}
+
+  /* ---------- TIMELINE ---------- */
+  .timeline{position:relative;max-width:860px;margin:0 auto;padding-left:34px}
+  .timeline::before{
+    content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;
+    background:linear-gradient(180deg,var(--baby),var(--baby-mid));
+  }
+  .t-item{position:relative;margin-bottom:26px}
+  .t-item::before{
+    content:"";position:absolute;left:-32px;top:26px;width:14px;height:14px;border-radius:50%;
+    background:#fff;border:3px solid var(--accent);box-shadow:0 0 0 4px var(--baby-soft);
+  }
+  .t-card{
+    background:#fff;border:1px solid var(--line);border-radius:20px;
+    padding:28px 30px;transition:.35s;box-shadow:0 8px 24px rgba(18,58,92,.05);
+  }
+  .t-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(63,155,216,.16);border-color:var(--baby)}
+  .t-top{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:baseline;margin-bottom:6px}
+  .t-co{font-family:'Playfair Display',serif;font-weight:600;font-size:20px}
+  .t-date{
+    font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+    color:var(--accent-deep);background:var(--baby-soft);border:1px solid var(--baby-mid);
+    border-radius:50px;padding:6px 14px;white-space:nowrap;
+  }
+  .t-role{color:var(--accent-deep);font-weight:700;font-size:14px;letter-spacing:.5px;margin-bottom:4px}
+  .t-loc{font-size:12.5px;color:var(--ink-soft);margin-bottom:14px}
+  .t-card ul{list-style:none}
+  .t-card li{
+    position:relative;padding-left:22px;margin-bottom:8px;
+    color:var(--ink-soft);font-size:14.5px;
+  }
+  .t-card li::before{
+    content:"";position:absolute;left:2px;top:8px;width:8px;height:8px;border-radius:50%;
+    background:var(--baby);
+  }
+  .t-obj{
+    margin:10px 0 14px;padding:14px 18px;border-radius:14px;
+    background:var(--baby-soft);border:1px dashed var(--baby-mid);
+    font-size:13.5px;color:var(--ink-soft);
+  }
+  .t-obj b{color:var(--accent-deep)}
+
+  /* ---------- EDUCATION ---------- */
+  .edu-card{max-width:760px;margin:0 auto;display:flex;gap:24px;align-items:center}
+  .edu-year{
+    flex-shrink:0;width:86px;height:86px;border-radius:50%;
+    background:linear-gradient(135deg,var(--baby),var(--accent));
+    color:#fff;display:flex;align-items:center;justify-content:center;
+    font-family:'Playfair Display',serif;font-weight:700;font-size:20px;
+    box-shadow:0 10px 24px rgba(63,155,216,.3);
+  }
+  .edu-card h3{font-family:'Playfair Display',serif;font-size:21px;margin-bottom:6px}
+  .edu-card p{color:var(--ink-soft);font-size:14.5px}
+
+  /* ---------- SKILLS ---------- */
+  .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .skill-card h3{
+    font-family:'Playfair Display',serif;font-size:19px;margin-bottom:16px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .skill-card h3 i{
+    width:10px;height:10px;border-radius:50%;background:var(--accent);flex-shrink:0;
+  }
+  .tags{display:flex;flex-wrap:wrap;gap:8px}
+  .tag{
+    background:var(--baby-soft);border:1px solid var(--baby-mid);color:var(--ink);
+    border-radius:50px;padding:8px 15px;font-size:13px;font-weight:600;
+  }
+
+  /* ---------- LANGUAGES ---------- */
+  .langs{max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+  .lang-row{
+    background:#fff;border:1px solid var(--line);border-radius:16px;
+    padding:20px 26px;display:flex;justify-content:space-between;align-items:center;gap:16px;
+    box-shadow:0 6px 18px rgba(18,58,92,.05);
+  }
+  .lang-row b{font-family:'Playfair Display',serif;font-size:18px;font-weight:600}
+  .lang-row small{display:block;color:var(--ink-soft);font-size:12.5px;letter-spacing:1px;text-transform:uppercase}
+  .dots{display:flex;gap:6px}
+  .dots i{width:12px;height:12px;border-radius:50%;background:var(--line)}
+  .dots i.on{background:linear-gradient(135deg,var(--baby),var(--accent))}
+
+  /* ---------- CONTACT ---------- */
+  .contact-card{
+    max-width:760px;margin:0 auto;text-align:center;
+    background:linear-gradient(135deg,var(--baby) 0%,var(--accent) 100%);
+    border-radius:26px;padding:56px 34px;color:#fff;
+    box-shadow:0 24px 60px rgba(63,155,216,.35);
+  }
+  .contact-card h3{font-family:'Playfair Display',serif;font-size:clamp(24px,4vw,34px);margin-bottom:10px}
+  .contact-card p{opacity:.92;margin-bottom:30px}
+  .c-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .c-btn{
+    display:inline-block;background:#fff;color:var(--accent-deep);
+    border-radius:50px;padding:15px 30px;text-decoration:none;
+    font-weight:800;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;transition:.3s;
+  }
+  .c-btn:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,.18)}
+  .c-btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.7)}
+  .c-btn.ghost:hover{background:rgba(255,255,255,.12)}
+
+  footer{
+    padding:34px 20px;text-align:center;font-size:13px;color:var(--ink-soft);
+    border-top:1px solid var(--line);background:#fff;
+  }
+
+  .reveal{opacity:0;transform:translateY(36px);transition:all .9s cubic-bezier(.2,.8,.2,1)}
+  .reveal.visible{opacity:1;transform:none}
+
+  /* ---------- MOBILE ---------- */
+  @media (max-width:860px){
+    .stats{grid-template-columns:1fr 1fr;margin-top:-30px}
+    .about-grid{grid-template-columns:1fr}
+    .skills-grid{grid-template-columns:1fr}
+    .brand-sub{display:none}
+    section{padding:70px 16px}
+    .hero{padding-top:130px}
+    .t-card{padding:24px 20px}
+    .timeline{padding-left:26px}
+    .t-item::before{left:-24px}
+    .edu-card{flex-direction:column;text-align:center}
+    .print-btn{display:none}
+  }
+  @media (max-width:420px){
+    .stats{grid-template-columns:1fr 1fr;gap:10px}
+    .stat{padding:18px 10px}
+    .h-in{padding:12px 14px}
+    .brand-name{font-size:15px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+  }
+  /* ---------- PRINT ---------- */
+  @media print{
+    header,.print-btn,.lang-switch,.c-btns,.hero::before,.hero::after{display:none!important}
+    body{background:#fff}
+    section{padding:30px 10px}
+    .t-card,.card,.stat{box-shadow:none}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body class="lang-ru">
+
+<!-- HEADER -->
+<header>
+  <div class="h-in">
+    <a href="#" class="brand">
+      <div class="mono"><span class="ru">АБ</span><span class="en">AB</span></div>
+      <div>
+        <div class="brand-name"><span class="ru">Алина Бабаян</span><span class="en">Alina Babayan</span></div>
+        <div class="brand-sub"><span class="ru">Инженер-сметчик</span><span class="en">Estimator Engineer</span></div>
+      </div>
+    </a>
+    <div class="h-actions">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button id="btnRu" class="active">RU</button>
+        <button id="btnEn">EN</button>
+      </div>
+      <button class="print-btn" onclick="window.print()"><span class="ru">СКАЧАТЬ PDF</span><span class="en">DOWNLOAD PDF</span></button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-in">
+    <div class="hero-tag"><span class="ru">Резюме · 2026</span><span class="en">Curriculum Vitae · 2026</span></div>
+    <h1><span class="ru">Бабаян Алина Жораевна</span><span class="en">Alina Babayan</span></h1>
+    <div class="hero-role">
+      <span class="ru">Инженер-сметчик · Инженер ПТО · Специалист Excel, Word, AutoCAD</span>
+      <span class="en">Estimator Engineer · PTO Engineer · Excel · Word · AutoCAD Specialist</span>
+    </div>
+    <p class="hero-sum">
+      <span class="ru">25 лет опыта в строительстве и энергетике: составление и защита смет, госэкспертиза, тендеры, исполнительная документация.</span>
+      <span class="en">25 years of experience in construction & energy: estimating, expert-review defense, tenders and as-built documentation.</span>
+    </p>
+    <div class="chips">
+      <a class="chip" href="tel:+79267840023"><span class="ic">✆</span> +7 (926) 784-00-23</a>
+      <a class="chip" href="https://wa.me/79267840023" target="_blank"><span class="ic">✦</span> WhatsApp</a>
+      <a class="chip" href="mailto:alina_bj@mail.ru"><span class="ic">✉</span> alina_bj@mail.ru</a>
+      <span class="chip"><span class="ic">◎</span> <span class="ru">Мытищи, Московская область</span><span class="en">Mytishchi, Moscow Region</span></span>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><b>25,5</b><span><span class="ru">лет опыта</span><span class="en">years of experience</span></span></div>
+  <div class="stat"><b>180 000 ₽</b><span><span class="ru">желаемая зарплата</span><span class="en">expected salary (net)</span></span></div>
+  <div class="stat"><b>6</b><span><span class="ru">компаний</span><span class="en">companies</span></span></div>
+  <div class="stat"><b>3</b><span><span class="ru">объекта госграницы</span><span class="en">border-checkpoint projects</span></span></div>
+</div>
+
+<!-- ABOUT -->
+<section class="reveal">
+  <div class="wrap">
+    <h2 class="sec-title"><span class="ru">Обо мне</span><span class="en">About Me</span></h2>
+    <div class="sec-line"></div>
+    <div class="about-grid">
+      <div class="card about-txt">
+        <p><span class="ru"><strong>Инженер-сметчик с 25-летним опытом</strong> в жилищном, дорожном и коммерческом строительстве, а также в энергетике.</span><span class="en"><strong>Estimator engineer with 25 years of experience</strong> in residential, road and commercial construction, as well as the energy sector.</span></p>
+        <p><span class="ru">Составляю локальные, объектные и сводные сметы, ведомости объёмов работ, акты КС-2, КС-3, КС-6, М-29, М-19. Работаю с нормативными базами <strong>ФЕР, ГЭСН, ТЕР, ТСНБ-74, СНиП-1984</strong>.</span><span class="en">I prepare local, object and consolidated estimates, work-volume statements, KS-2 / KS-3 / KS-6 / M-29 / M-19 forms. I work with normative databases <strong>FER, GESN, TER, TSNB-74, SNiP-1984</strong>.</span></p>
+        <p><span class="ru">Готовлю документацию для <strong>государственной экспертизы</strong> и защищаю сметы, участвую в тендерах и готовлю коммерческие предложения.</span><span class="en">I prepare documentation for <strong>state expert review</strong>, defend estimates, participate in tenders and draft commercial proposals.</span></p>
+        <p><span class="ru">Готова к <strong>удалённой работе</strong>: полная или частичная занятость, проектные и разовые задания.</span><span class="en">Available for <strong>remote work</strong>: full-time, part-time, project-based and one-off assignments.</span></p>
+      </div>
+      <div class="card details">
+        <h3><span class="ru">Детали</span><span class="en">Details</span></h3>
+        <div class="d-row"><span><span class="ru">Гражданство</span><span class="en">Citizenship</span></span><b><span class="ru">Россия</span><span class="en">Russia</span></b></div>
+        <div class="d-row"><span><span class="ru">Разрешение на работу</span><span class="en">Work permits</span></span><b><span class="ru">Россия · Армения</span><span class="en">Russia · Armenia</span></b></div>
+        <div class="d-row"><span><span class="ru">Формат работы</span><span class="en">Work format</span></span><b><span class="ru">Удалённо</span><span class="en">Remote</span></b></div>
+        <div class="d-row"><span><span class="ru">Занятость</span><span class="en">Employment</span></span><b><span class="ru">Полная / частичная / проекты</span><span class="en">Full / part-time / projects</span></b></div>
+        <div class="d-row"><span><span class="ru">Командировки</span><span class="en">Business trips</span></span><b><span class="ru">Не готова</span><span class="en">Not available</span></b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="sec-soft reveal">
+  <div class="wrap">
+    <h2 class="sec-title"><span class="ru">Опыт работы</span><span class="en">Work Experience</span></h2>
+    <div class="sec-line"></div>
+    <p class="sec-sub"><span class="ru">25 лет 6 месяцев — от инженера-программиста до ведущего инженера-сметчика.</span><span class="en">25 years 6 months — from engineer-programmer to lead estimator engineer.</span></p>
+
+    <div class="timeline">
+
+      <div class="t-item"><div class="t-card">
+        <div class="t-top"><div class="t-co"><span class="ru">ЗАО «Гринфилд Констракшн»</span><span class="en">Greenfield Construction JSC</span></div><div class="t-date"><span class="ru">Ноябрь 2025 — н. в.</span><span class="en">Nov 2025 — present</span></div></div>
+        <div class="t-role"><span class="ru">Инженер-сметчик</span><span class="en">Estimator Engineer</span></div>
+        <div class="t-loc"><span class="ru">Армения · Строительство жилищное</span><span class="en">Armenia · Residential construction</span></div>
+        <ul>
+          <li><span class="ru">Составление смет на СМР по коммерческим расценкам (Excel)</span><span class="en">Construction estimates at commercial rates (Excel)</span></li>
+          <li><span class="ru">Составление дефектных ведомостей по объектам</span><span class="en">Preparation of defect statements per facility</span></li>
+          <li><span class="ru">Ведомости списания материалов (М-29, М-19)</span><span class="en">Material write-off statements (M-29, M-19)</span></li>
+          <li><span class="ru">Ведение ведомостей выполнения работ (КС-6, КС-6а)</span><span class="en">Work performance logs (KS-6, KS-6a)</span></li>
+          <li><span class="ru">Подготовка форм КС-2, КС-3</span><span class="en">Preparation of KS-2, KS-3 forms</span></li>
+        </ul>
+      </div></div>
+
+      <div class="t-item"><div class="t-card">
+        <div class="t-top"><div class="t-co"><span class="ru">СП Групп</span><span class="en">SP Group</span></div><div class="t-date"><span class="ru">Январь 2023 — н. в.</span><span class="en">Jan 2023 — present</span></div></div>
+        <div class="t-role"><span class="ru">Ведущий инженер-сметчик</span><span class="en">Lead Estimator Engineer</span></div>
+        <div class="t-loc"><span class="ru">Москва · Дорожное, жилищное и коммерческое строительство</span><span class="en">Moscow · Road, residential & commercial construction</span></div>
+        <div class="t-obj">
+          <b><span class="ru">Объекты:</span><span class="en">Projects:</span></b>
+          <span class="ru">погранпункты «Ратманово» (полный пакет документации для сдачи объекта), «Ивангород» (исполнительная и сметная документация), «Петухово» (сметы для госэкспертизы).</span>
+          <span class="en">border checkpoints “Ratmanovo” (full handover documentation package), “Ivangorod” (as-built & estimate documentation), “Petukhovo” (estimates for state expert review).</span>
+        </div>
+        <ul>
+          <li><span class="ru">Локальные, объектные сметы и сводные сметные расчёты</span><span class="en">Local, object and consolidated estimate calculations</span></li>
+          <li><span class="ru">Ведомости объёмов работ (ВОР, ДВР): земляные, монолитные, инженерные сети, благоустройство</span><span class="en">Work-volume statements (VOR, DVR): earthworks, monolith, engineering networks, landscaping</span></li>
+          <li><span class="ru">Акты выполненных работ КС-2, КС-3</span><span class="en">Completed-works certificates KS-2, KS-3</span></li>
+          <li><span class="ru">Проверка смет и корректировки по замечаниям заказчика и экспертизы</span><span class="en">Estimate verification and adjustments per client & expert-review comments</span></li>
+          <li><span class="ru">Подготовка документации для госэкспертизы и защита смет</span><span class="en">Documentation for state expert review and estimate defense</span></li>
+          <li><span class="ru">Нормативные базы: ФЕР, ГЭСН, ТЕР, ТСНБ-74, СНиП-1984</span><span class="en">Normative databases: FER, GESN, TER, TSNB-74, SNiP-1984</span></li>
+          <li><span class="ru">Коммерческие предложения, участие в тендерах</span><span class="en">Commercial proposals, tender participation</span></li>
+        </ul>
+      </div></div>
+
+      <div class="t-item"><div class="t-card">
+        <div class="t-top"><div class="t-co"><span class="ru">ООО «Констракт»</span><span class="en">Konstrakt LLC</span></div><div class="t-date"><span class="ru">Март 2024 — Ноябрь 2025</span><span class="en">Mar 2024 — Nov 2025</span></div></div>
+        <div class="t-role"><span class="ru">Инженер-сметчик</span><span class="en">Estimator Engineer</span></div>
+        <div class="t-loc"><span class="ru">Армения · Строительство жилищное</span><span class="en">Armenia · Residential construction</span></div>
+        <ul>
+          <li><span class="ru">Сметы на СМР по коммерческим расценкам (Excel)</span><span class="en">Construction estimates at commercial rates (Excel)</span></li>
+          <li><span class="ru">Дефектные ведомости по объектам</span><span class="en">Defect statements per facility</span></li>
+          <li><span class="ru">Ведомости списания материалов (М-29, М-19)</span><span class="en">Material write-off statements (M-29, M-19)</span></li>
+          <li><span class="ru">Ведомости выполнения работ (КС-6, КС-6а), формы КС-2, КС-3</span><span class="en">Work performance logs (KS-6, KS-6a), KS-2 / KS-3 forms</span></li>
+        </ul>
+      </div></div>
+
+      <div class="t-item"><div class="t-card">
+        <div class="t-top"><div class="t-co"><span class="ru">ООО «КЭС» — Королёвские электрические сети</span><span class="en">KES — Korolyov Electric Networks</span></div><div class="t-date"><span class="ru">Июль 2022 — Декабрь 2022</span><span class="en">Jul 2022 — Dec 2022</span></div></div>
+        <div class="t-role"><span class="ru">Ведущий инженер-сметчик</span><span class="en">Lead Estimator Engineer</span></div>
+        <div class="t-loc"><span class="ru">Королёв, Московская область</span><span class="en">Korolyov, Moscow Region</span></div>
+        <ul>
+          <li><span class="ru">Сметы на СМР и ПИР в «Смета.ру» и «Гранд-Смета» (базы ТСНБ), коммерческие расценки (Excel)</span><span class="en">Construction & design estimates in Smeta.ru and Grand-Smeta (TSNB databases), commercial rates (Excel)</span></li>
+          <li><span class="ru">Сметы на строительство зданий, воздушных и кабельных линий, КТП, ТП, СТП</span><span class="en">Estimates for buildings, overhead & cable lines, KTP / TP / STP substations</span></li>
+          <li><span class="ru">Защита смет у заказчика, проверка смет</span><span class="en">Estimate defense with the client, estimate verification</span></li>
+          <li><span class="ru">Дефектные ведомости, М-29/М-19, КС-6/КС-6а, КС-2/КС-3</span><span class="en">Defect statements, M-29/M-19, KS-6/KS-6a, KS-2/KS-3</span></li>
+        </ul>
+      </div></div>
+
+      <div class="t-item"><div class="t-card">
+        <div class="t-top"><div class="t-co"><span class="ru">ООО «Орион Строй»</span><span class="en">Orion Stroy LLC</span></div><div class="t-date"><span class="ru">Август 2017 — Июль 2022</span><span class="en">Aug 2017 — Jul 2022</span></div></div>
+        <div class="t-role"><span class="ru">Сметчик</span><span class="en">Estimator</span></div>
+        <div class="t-loc"><span class="ru">Москва · Дорожное и коммерческое строительство</span><span class="en">Moscow · Road & commercial construction</span></div>
+        <ul>
+          <li><span class="ru">Сметы на СМР в «Смета.ру» (базы МГЭ, СН, ТСНБ, ФЕР) и по коммерческим расценкам</span><span class="en">Construction estimates in Smeta.ru (MGE, SN, TSNB, FER databases) and commercial rates</span></li>
+          <li><span class="ru">Инженерные системы: отопление, вентиляция, водоснабжение, канализация, противодымная защита, противопожарный водопровод, благоустройство</span><span class="en">Engineering systems: heating, ventilation, water supply, sewerage, smoke protection, fire water supply, landscaping</span></li>
+          <li><span class="ru">Подготовка и проверка смет для экспертизы, перенабор, перевод смет между базами</span><span class="en">Estimate preparation & verification for expert review, re-typing, conversion between databases</span></li>
+          <li><span class="ru">КС-2, КС-3, вывод ВОР, подгрузка ценников и индексов</span><span class="en">KS-2, KS-3, VOR output, price lists & index loading</span></li>
+          <li><span class="ru">Сметы для тендеров, коммерческие предложения и протоколы</span><span class="en">Tender estimates, commercial proposals & protocols</span></li>
+        </ul>
+      </div></div>
+
+      <div class="t-item"><div class="t-card">
+        <div class="t-top"><div class="t-co"><span class="ru">ЗАО «Эл. сети Армении», филиал «Мусалер»</span><span class="en">Electric Networks of Armenia JSC, Musaler branch</span></div><div class="t-date"><span class="ru">Май 2014 — Октябрь 2014</span><span class="en">May 2014 — Oct 2014</span></div></div>
+        <div class="t-role"><span class="ru">Ведущий бухгалтер</span><span class="en">Chief Accountant</span></div>
+        <div class="t-loc"><span class="ru">Армения · Энергетика</span><span class="en">Armenia · Energy sector</span></div>
+        <ul>
+          <li><span class="ru">Инвентаризация основных и материальных средств склада</span><span class="en">Inventory of fixed assets and warehouse materials</span></li>
+          <li><span class="ru">Фактуры получения и отпуска материалов, акты приёма-сдачи, рабочие договоры</span><span class="en">Material invoices, acceptance-handover acts, work contracts</span></li>
+          <li><span class="ru">Учёт получения и отпуска материалов в бухгалтерской программе, рабочий табель</span><span class="en">Material operations in accounting software, work timesheets</span></li>
+        </ul>
+      </div></div>
+
+      <div class="t-item"><div class="t-card">
+        <div class="t-top"><div class="t-co"><span class="ru">ЗАО «Эл. сети Армении», филиал «Мусалер»</span><span class="en">Electric Networks of Armenia JSC, Musaler branch</span></div><div class="t-date"><span class="ru">Февраль 1998 — Май 2014</span><span class="en">Feb 1998 — May 2014</span></div></div>
+        <div class="t-role"><span class="ru">Инженер-программист</span><span class="en">Engineer-Programmer</span></div>
+        <div class="t-loc"><span class="ru">Армения · Энергетика</span><span class="en">Armenia · Energy sector</span></div>
+        <ul>
+          <li><span class="ru">Ежемесячная инвентаризация расхода электроэнергии, показаний счётчиков и платежей абонентов</span><span class="en">Monthly inventory of electricity consumption, meter readings and subscriber payments</span></li>
+          <li><span class="ru">Оприходование ежедневных платежей</span><span class="en">Daily payment bookkeeping</span></li>
+          <li><span class="ru">Ежедневные и ежемесячные отчёты о платежах и потерях электроэнергии</span><span class="en">Daily & monthly reports on payments and electricity losses</span></li>
+        </ul>
+      </div></div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="reveal">
+  <div class="wrap">
+    <h2 class="sec-title"><span class="ru">Образование</span><span class="en">Education</span></h2>
+    <div class="sec-line"></div>
+    <div class="card edu-card">
+      <div class="edu-year">2011</div>
+      <div>
+        <h3><span class="ru">Армавирский региональный государственный колледж</span><span class="en">Armavir Regional State College</span></h3>
+        <p><span class="ru">Экономика, бухгалтерский учёт и аудит — бухгалтерский учёт, анализ и аудит. Среднее специальное образование.</span><span class="en">Economics, Accounting & Audit — accounting, analysis and audit. Vocational (secondary specialized) education.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="sec-soft reveal">
+  <div class="wrap">
+    <h2 class="sec-title"><span class="ru">Навыки</span><span class="en">Skills</span></h2>
+    <div class="sec-line"></div>
+    <div class="skills-grid">
+      <div class="card skill-card">
+        <h3><i></i><span class="ru">Сметное дело</span><span class="en">Estimating</span></h3>
+        <div class="tags">
+          <span class="tag"><span class="ru">ФЕР</span><span class="en">FER</span></span>
+          <span class="tag"><span class="ru">ГЭСН</span><span class="en">GESN</span></span>
+          <span class="tag"><span class="ru">ТЕР</span><span class="en">TER</span></span>
+          <span class="tag">ТСНБ-74</span>
+          <span class="tag"><span class="ru">СНиП-1984</span><span class="en">SNiP-1984</span></span>
+          <span class="tag"><span class="ru">МГЭ</span><span class="en">MGE</span></span>
+          <span class="tag"><span class="ru">Коммерческие расценки</span><span class="en">Commercial rates</span></span>
+        </div>
+      </div>
+      <div class="card skill-card">
+        <h3><i></i><span class="ru">Программы</span><span class="en">Software</span></h3>
+        <div class="tags">
+          <span class="tag"><span class="ru">Смета.ру</span><span class="en">Smeta.ru</span></span>
+          <span class="tag"><span class="ru">Гранд-Смета</span><span class="en">Grand-Smeta</span></span>
+          <span class="tag">AutoCAD</span>
+          <span class="tag">Excel</span>
+          <span class="tag">Word</span>
+        </div>
+      </div>
+      <div class="card skill-card">
+        <h3><i></i><span class="ru">Документация</span><span class="en">Documentation</span></h3>
+        <div class="tags">
+          <span class="tag"><span class="ru">КС-2</span><span class="en">KS-2</span></span>
+          <span class="tag"><span class="ru">КС-3</span><span class="en">KS-3</span></span>
+          <span class="tag"><span class="ru">КС-6</span><span class="en">KS-6</span></span>
+          <span class="tag"><span class="ru">М-29</span><span class="en">M-29</span></span>
+          <span class="tag"><span class="ru">М-19</span><span class="en">M-19</span></span>
+          <span class="tag"><span class="ru">ВОР / ДВР</span><span class="en">VOR / DVR</span></span>
+          <span class="tag"><span class="ru">Дефектные ведомости</span><span class="en">Defect statements</span></span>
+        </div>
+      </div>
+      <div class="card skill-card">
+        <h3><i></i><span class="ru">Дополнительно</span><span class="en">Additional</span></h3>
+        <div class="tags">
+          <span class="tag"><span class="ru">Тендеры</span><span class="en">Tenders</span></span>
+          <span class="tag"><span class="ru">Госэкспертиза</span><span class="en">State expert review</span></span>
+          <span class="tag"><span class="ru">Защита смет</span><span class="en">Estimate defense</span></span>
+          <span class="tag"><span class="ru">Коммерческие предложения</span><span class="en">Commercial proposals</span></span>
+          <span class="tag"><span class="ru">Исполнительность</span><span class="en">Reliability</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LANGUAGES -->
+<section class="reveal">
+  <div class="wrap">
+    <h2 class="sec-title"><span class="ru">Языки</span><span class="en">Languages</span></h2>
+    <div class="sec-line"></div>
+    <div class="langs">
+      <div class="lang-row">
+        <div><b><span class="ru">Армянский</span><span class="en">Armenian</span></b><small><span class="ru">Родной</span><span class="en">Native</span></small></div>
+        <div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+      </div>
+      <div class="lang-row">
+        <div><b><span class="ru">Русский</span><span class="en">Russian</span></b><small>C1 · <span class="ru">Продвинутый</span><span class="en">Advanced</span></small></div>
+        <div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+      </div>
+      <div class="lang-row">
+        <div><b><span class="ru">Английский</span><span class="en">English</span></b><small>A1 · <span class="ru">Начальный</span><span class="en">Beginner</span></small></div>
+        <div class="dots"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec-soft reveal">
+  <div class="wrap">
+    <div class="contact-card">
+      <h3><span class="ru">Свяжитесь со мной</span><span class="en">Get in Touch</span></h3>
+      <p><span class="ru">Открыта к предложениям — удалённая работа по России.</span><span class="en">Open to offers — remote work across Russia.</span></p>
+      <div class="c-btns">
+        <a class="c-btn" href="https://wa.me/79267840023" target="_blank">WhatsApp</a>
+        <a class="c-btn" href="tel:+79267840023"><span class="ru">Позвонить</span><span class="en">Call</span></a>
+        <a class="c-btn ghost" href="mailto:alina_bj@mail.ru"><span class="ru">Написать письмо</span><span class="en">Send Email</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 · <span class="ru">Бабаян Алина Жораевна</span><span class="en">Alina Babayan</span> · <span class="ru">Мытищи, Россия</span><span class="en">Mytishchi, Russia</span>
+</footer>
+
+<script>
+  // ---- Language switcher ----
+  const btnRu = document.getElementById('btnRu');
+  const btnEn = document.getElementById('btnEn');
+  function setLang(l){
+    document.body.classList.remove('lang-ru','lang-en');
+    document.body.classList.add('lang-' + l);
+    document.documentElement.lang = l;
+    document.title = (l === 'ru')
+      ? 'Алина Бабаян — инженер-сметчик · резюме'
+      : 'Alina Babayan — Estimator Engineer · CV';
+    btnRu.classList.toggle('active', l === 'ru');
+    btnEn.classList.toggle('active', l === 'en');
+    try{ localStorage.setItem('cv-lang', l); }catch(e){}
+  }
+  btnRu.addEventListener('click', () => setLang('ru'));
+  btnEn.addEventListener('click', () => setLang('en'));
+  let saved = 'ru';
+  try{ saved = localStorage.getItem('cv-lang') === 'en' ? 'en' : 'ru'; }catch(e){}
+  setLang(saved);
+
+  // ---- Reveal on scroll ----
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
+  }), {threshold:.06});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
