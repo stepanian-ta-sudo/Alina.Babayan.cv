@@ -10,143 +10,58 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --baby:#8fd0f2;
-    --baby-mid:#bfe3f8;
-    --baby-soft:#eef8fe;
-    --accent:#3f9bd8;
-    --accent-deep:#2b7fb8;
-    --ink:#123a5c;
-    --ink-soft:#51718c;
-    --white:#ffffff;
-    --line:#dcecf7;
+    --baby:#8fd0f2; --baby-mid:#bfe3f8; --baby-soft:#eef8fe;
+    --accent:#3f9bd8; --accent-deep:#2b7fb8;
+    --ink:#123a5c; --ink-soft:#51718c; --white:#ffffff; --line:#dcecf7;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-  body{
-    background:var(--white);
-    color:var(--ink);
-    font-family:'Manrope',sans-serif;
-    font-weight:400;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-    -webkit-tap-highlight-color:transparent;
-    overflow-x:hidden;
-  }
+  body{background:var(--white);color:var(--ink);font-family:'Manrope',sans-serif;font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;overflow-x:hidden}
   body.lang-ru .en{display:none}
   body.lang-en .ru{display:none}
+  a{color:inherit} img{max-width:100%}
 
-  a{color:inherit}
-  img{max-width:100%}
-
-  /* ---------- HEADER ---------- */
-  header{
-    position:fixed;top:0;left:0;right:0;z-index:100;
-    background:rgba(255,255,255,.85);
-    backdrop-filter:blur(14px);
-    -webkit-backdrop-filter:blur(14px);
-    border-bottom:1px solid var(--line);
-  }
-  .h-in{
-    max-width:1080px;margin:0 auto;padding:14px 20px;
-    display:flex;justify-content:space-between;align-items:center;gap:14px;
-  }
+  header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.85);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .h-in{max-width:1080px;margin:0 auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;gap:14px}
   .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-  .mono{
-    width:42px;height:42px;border-radius:50%;
-    background:linear-gradient(135deg,var(--baby),var(--accent));
-    color:#fff;display:flex;align-items:center;justify-content:center;
-    font-family:'Playfair Display',serif;font-weight:700;font-size:16px;
-    box-shadow:0 6px 16px rgba(63,155,216,.35);flex-shrink:0;
-  }
+  .mono{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--baby),var(--accent));color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;font-size:16px;box-shadow:0 6px 16px rgba(63,155,216,.35);flex-shrink:0}
   .brand-name{font-family:'Playfair Display',serif;font-weight:600;font-size:17px;letter-spacing:.3px}
   .brand-sub{font-size:11px;color:var(--ink-soft);letter-spacing:1.5px;text-transform:uppercase}
   .h-actions{display:flex;align-items:center;gap:10px}
-  .lang-switch{
-    display:flex;background:var(--baby-soft);border:1px solid var(--line);
-    border-radius:50px;padding:4px;
-  }
-  .lang-switch button{
-    border:none;background:transparent;cursor:pointer;
-    padding:7px 16px;border-radius:50px;
-    font-family:'Manrope',sans-serif;font-weight:700;font-size:12px;letter-spacing:1px;
-    color:var(--ink-soft);transition:.3s;
-  }
+  .lang-switch{display:flex;background:var(--baby-soft);border:1px solid var(--line);border-radius:50px;padding:4px}
+  .lang-switch button{border:none;background:transparent;cursor:pointer;padding:7px 16px;border-radius:50px;font-family:'Manrope',sans-serif;font-weight:700;font-size:12px;letter-spacing:1px;color:var(--ink-soft);transition:.3s}
   .lang-switch button.active{background:var(--accent);color:#fff;box-shadow:0 4px 12px rgba(63,155,216,.35)}
-  .print-btn{
-    border:1px solid var(--baby-mid);background:#fff;color:var(--accent-deep);
-    border-radius:50px;padding:9px 18px;cursor:pointer;
-    font-family:'Manrope',sans-serif;font-weight:700;font-size:12px;letter-spacing:1px;transition:.3s;
-  }
+  .print-btn{border:1px solid var(--baby-mid);background:#fff;color:var(--accent-deep);border-radius:50px;padding:9px 18px;cursor:pointer;font-family:'Manrope',sans-serif;font-weight:700;font-size:12px;letter-spacing:1px;transition:.3s}
   .print-btn:hover{background:var(--baby-soft)}
 
-  /* ---------- HERO ---------- */
-  .hero{
-    position:relative;overflow:hidden;
-    background:linear-gradient(180deg,#fff 0%,var(--baby-soft) 100%);
-    padding:150px 20px 80px;text-align:center;
-  }
-  .hero::before,.hero::after{
-    content:"";position:absolute;border-radius:50%;pointer-events:none;
-  }
+  .hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#fff 0%,var(--baby-soft) 100%);padding:150px 20px 80px;text-align:center}
+  .hero::before,.hero::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
   .hero::before{width:420px;height:420px;background:radial-gradient(circle,rgba(143,208,242,.35),transparent 70%);top:-120px;left:-120px}
   .hero::after{width:520px;height:520px;background:radial-gradient(circle,rgba(63,155,216,.18),transparent 70%);bottom:-200px;right:-160px}
   .hero-in{position:relative;z-index:2;max-width:860px;margin:0 auto}
-  .hero-tag{
-    display:inline-block;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
-    color:var(--accent-deep);background:#fff;border:1px solid var(--baby-mid);
-    border-radius:50px;padding:8px 20px;margin-bottom:26px;
-  }
-  .hero h1{
-    font-family:'Playfair Display',serif;font-weight:600;
-    font-size:clamp(38px,7vw,68px);line-height:1.1;margin-bottom:14px;
-  }
-  .hero-role{
-    font-size:clamp(15px,2.4vw,19px);color:var(--accent-deep);
-    font-weight:600;letter-spacing:1px;margin-bottom:18px;
-  }
+  .hero-tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--accent-deep);background:#fff;border:1px solid var(--baby-mid);border-radius:50px;padding:8px 20px;margin-bottom:26px}
+  .hero h1{font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(38px,7vw,68px);line-height:1.1;margin-bottom:14px}
+  .hero-role{font-size:clamp(15px,2.4vw,19px);color:var(--accent-deep);font-weight:600;letter-spacing:1px;margin-bottom:18px}
   .hero-sum{color:var(--ink-soft);max-width:640px;margin:0 auto 34px;font-size:16px}
   .chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-  .chip{
-    display:inline-flex;align-items:center;gap:8px;
-    background:#fff;border:1px solid var(--line);border-radius:50px;
-    padding:10px 18px;font-size:13px;font-weight:600;color:var(--ink);
-    text-decoration:none;transition:.3s;box-shadow:0 4px 14px rgba(18,58,92,.06);
-  }
+  .chip{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:50px;padding:10px 18px;font-size:13px;font-weight:600;color:var(--ink);text-decoration:none;transition:.3s;box-shadow:0 4px 14px rgba(18,58,92,.06)}
   .chip:hover{border-color:var(--accent);transform:translateY(-2px)}
   .chip .ic{color:var(--accent)}
 
-  /* ---------- STATS ---------- */
-  .stats{
-    max-width:1080px;margin:-40px auto 0;padding:0 20px;position:relative;z-index:3;
-    display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
-  }
-  .stat{
-    background:#fff;border:1px solid var(--line);border-radius:18px;
-    padding:26px 18px;text-align:center;box-shadow:0 12px 30px rgba(18,58,92,.08);
-  }
-  .stat b{
-    display:block;font-family:'Playfair Display',serif;font-weight:700;
-    font-size:clamp(24px,3.4vw,34px);color:var(--accent-deep);margin-bottom:6px;
-  }
+  .stats{max-width:1080px;margin:-40px auto 0;padding:0 20px;position:relative;z-index:3;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 18px;text-align:center;box-shadow:0 12px 30px rgba(18,58,92,.08)}
+  .stat b{display:block;font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(24px,3.4vw,34px);color:var(--accent-deep);margin-bottom:6px}
   .stat span{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft)}
 
-  /* ---------- SECTIONS ---------- */
   section{padding:90px 20px}
   .wrap{max-width:1080px;margin:0 auto}
   .sec-soft{background:var(--baby-soft)}
-  .sec-title{
-    font-family:'Playfair Display',serif;font-weight:600;
-    font-size:clamp(28px,4.6vw,42px);text-align:center;margin-bottom:12px;
-  }
+  .sec-title{font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(28px,4.6vw,42px);text-align:center;margin-bottom:12px}
   .sec-line{width:64px;height:3px;background:linear-gradient(90deg,var(--baby),var(--accent));border-radius:3px;margin:0 auto 18px}
   .sec-sub{text-align:center;color:var(--ink-soft);max-width:640px;margin:0 auto 56px}
 
-  /* ---------- ABOUT ---------- */
   .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:26px;align-items:start}
-  .card{
-    background:#fff;border:1px solid var(--line);border-radius:20px;
-    padding:34px;box-shadow:0 12px 30px rgba(18,58,92,.06);
-  }
+  .card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:34px;box-shadow:0 12px 30px rgba(18,58,92,.06)}
   .about-txt p{margin-bottom:16px;color:var(--ink-soft);font-size:15.5px}
   .about-txt p:last-child{margin-bottom:0}
   .about-txt strong{color:var(--ink)}
@@ -156,150 +71,75 @@
   .d-row b{color:var(--ink);font-weight:600;text-align:right}
   .d-row span{color:var(--ink-soft)}
 
-  /* ---------- TIMELINE ---------- */
   .timeline{position:relative;max-width:860px;margin:0 auto;padding-left:34px}
-  .timeline::before{
-    content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;
-    background:linear-gradient(180deg,var(--baby),var(--baby-mid));
-  }
+  .timeline::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--baby),var(--baby-mid))}
   .t-item{position:relative;margin-bottom:26px}
-  .t-item::before{
-    content:"";position:absolute;left:-32px;top:26px;width:14px;height:14px;border-radius:50%;
-    background:#fff;border:3px solid var(--accent);box-shadow:0 0 0 4px var(--baby-soft);
-  }
-  .t-card{
-    background:#fff;border:1px solid var(--line);border-radius:20px;
-    padding:28px 30px;transition:.35s;box-shadow:0 8px 24px rgba(18,58,92,.05);
-  }
+  .t-item::before{content:"";position:absolute;left:-32px;top:26px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--accent);box-shadow:0 0 0 4px var(--baby-soft)}
+  .t-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px 30px;transition:.35s;box-shadow:0 8px 24px rgba(18,58,92,.05)}
   .t-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(63,155,216,.16);border-color:var(--baby)}
-  .t-card.featured{
-    border:2px solid var(--baby);
-    box-shadow:0 18px 44px rgba(63,155,216,.18);
-  }
-  .t-badge{
-    display:inline-block;margin-bottom:12px;
-    background:linear-gradient(135deg,var(--baby),var(--accent));
-    color:#fff;font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;
-    border-radius:50px;padding:6px 14px;
-  }
+  .t-card.featured{border:2px solid var(--baby);box-shadow:0 18px 44px rgba(63,155,216,.18)}
+  .t-badge{display:inline-block;margin-bottom:12px;background:linear-gradient(135deg,var(--baby),var(--accent));color:#fff;font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;border-radius:50px;padding:6px 14px}
   .t-photos{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:16px 0 6px}
   .t-photos img{width:100%;height:150px;object-fit:cover;border-radius:12px;border:1px solid var(--line)}
   .t-photos img.wide{grid-column:1/-1;height:200px}
   .t-photos.one{grid-template-columns:1fr}
   .t-photos.one img{height:200px}
-
   .t-top{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:baseline;margin-bottom:6px}
   .t-co{font-family:'Playfair Display',serif;font-weight:600;font-size:20px}
-  .t-date{
-    font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
-    color:var(--accent-deep);background:var(--baby-soft);border:1px solid var(--baby-mid);
-    border-radius:50px;padding:6px 14px;white-space:nowrap;
-  }
+  .t-date{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent-deep);background:var(--baby-soft);border:1px solid var(--baby-mid);border-radius:50px;padding:6px 14px;white-space:nowrap}
   .t-role{color:var(--accent-deep);font-weight:700;font-size:14px;letter-spacing:.5px;margin-bottom:4px}
   .t-loc{font-size:12.5px;color:var(--ink-soft);margin-bottom:14px}
   .t-card ul{list-style:none}
-  .t-card li{
-    position:relative;padding-left:22px;margin-bottom:8px;
-    color:var(--ink-soft);font-size:14.5px;
-  }
-  .t-card li::before{
-    content:"";position:absolute;left:2px;top:8px;width:8px;height:8px;border-radius:50%;
-    background:var(--baby);
-  }
-  .t-obj{
-    margin:10px 0 14px;padding:14px 18px;border-radius:14px;
-    background:var(--baby-soft);border:1px dashed var(--baby-mid);
-    font-size:13.5px;color:var(--ink-soft);
-  }
+  .t-card li{position:relative;padding-left:22px;margin-bottom:8px;color:var(--ink-soft);font-size:14.5px}
+  .t-card li::before{content:"";position:absolute;left:2px;top:8px;width:8px;height:8px;border-radius:50%;background:var(--baby)}
+  .t-obj{margin:10px 0 14px;padding:14px 18px;border-radius:14px;background:var(--baby-soft);border:1px dashed var(--baby-mid);font-size:13.5px;color:var(--ink-soft)}
   .t-obj b{color:var(--accent-deep)}
 
-  /* ---------- RESTORATION PROJECTS ---------- */
   .rest-group{margin-bottom:60px}
   .rest-group:last-child{margin-bottom:0}
-  .rest-subtitle{
-    font-family:'Playfair Display',serif;font-size:24px;font-weight:600;text-align:center;margin-bottom:30px;color:var(--ink);
-  }
-  .rest-grid{
-    display:grid;grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));gap:20px;
-  }
-  .rest-card{
-    background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;
-    box-shadow:0 8px 24px rgba(18,58,92,.05);transition:.35s;
-  }
+  .rest-subtitle{font-family:'Playfair Display',serif;font-size:24px;font-weight:600;text-align:center;margin-bottom:12px;color:var(--ink)}
+  .rest-sub2{text-align:center;font-size:13px;color:var(--ink-soft);margin-bottom:30px}
+  .rest-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+  .rest-card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 8px 24px rgba(18,58,92,.05);transition:.35s}
   .rest-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(63,155,216,.16);border-color:var(--baby)}
   .rest-card img{width:100%;height:180px;object-fit:cover;display:block}
   .rest-info{padding:20px}
   .rest-info h4{font-family:'Playfair Display',serif;font-size:18px;margin-bottom:6px;color:var(--ink)}
   .rest-info p{font-size:13px;color:var(--accent-deep);font-weight:600;letter-spacing:.5px;text-transform:uppercase}
+  .rest-info .addr{font-size:12.5px;color:var(--ink-soft);text-transform:none;letter-spacing:0;margin-top:4px;line-height:1.5}
 
-  /* ---------- EDUCATION ---------- */
   .edu-card{max-width:760px;margin:0 auto;display:flex;gap:24px;align-items:center}
-  .edu-year{
-    flex-shrink:0;width:86px;height:86px;border-radius:50%;
-    background:linear-gradient(135deg,var(--baby),var(--accent));
-    color:#fff;display:flex;align-items:center;justify-content:center;
-    font-family:'Playfair Display',serif;font-weight:700;font-size:20px;
-    box-shadow:0 10px 24px rgba(63,155,216,.3);
-  }
+  .edu-year{flex-shrink:0;width:86px;height:86px;border-radius:50%;background:linear-gradient(135deg,var(--baby),var(--accent));color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;font-size:20px;box-shadow:0 10px 24px rgba(63,155,216,.3)}
   .edu-card h3{font-family:'Playfair Display',serif;font-size:21px;margin-bottom:6px}
   .edu-card p{color:var(--ink-soft);font-size:14.5px}
 
-  /* ---------- SKILLS ---------- */
   .skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-  .skill-card h3{
-    font-family:'Playfair Display',serif;font-size:19px;margin-bottom:16px;
-    display:flex;align-items:center;gap:10px;
-  }
-  .skill-card h3 i{
-    width:10px;height:10px;border-radius:50%;background:var(--accent);flex-shrink:0;
-  }
+  .skill-card h3{font-family:'Playfair Display',serif;font-size:19px;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+  .skill-card h3 i{width:10px;height:10px;border-radius:50%;background:var(--accent);flex-shrink:0}
   .tags{display:flex;flex-wrap:wrap;gap:8px}
-  .tag{
-    background:var(--baby-soft);border:1px solid var(--baby-mid);color:var(--ink);
-    border-radius:50px;padding:8px 15px;font-size:13px;font-weight:600;
-  }
+  .tag{background:var(--baby-soft);border:1px solid var(--baby-mid);color:var(--ink);border-radius:50px;padding:8px 15px;font-size:13px;font-weight:600}
 
-  /* ---------- LANGUAGES ---------- */
   .langs{max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
-  .lang-row{
-    background:#fff;border:1px solid var(--line);border-radius:16px;
-    padding:20px 26px;display:flex;justify-content:space-between;align-items:center;gap:16px;
-    box-shadow:0 6px 18px rgba(18,58,92,.05);
-  }
+  .lang-row{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 26px;display:flex;justify-content:space-between;align-items:center;gap:16px;box-shadow:0 6px 18px rgba(18,58,92,.05)}
   .lang-row b{font-family:'Playfair Display',serif;font-size:18px;font-weight:600}
   .lang-row small{display:block;color:var(--ink-soft);font-size:12.5px;letter-spacing:1px;text-transform:uppercase}
   .dots{display:flex;gap:6px}
   .dots i{width:12px;height:12px;border-radius:50%;background:var(--line)}
   .dots i.on{background:linear-gradient(135deg,var(--baby),var(--accent))}
 
-  /* ---------- CONTACT ---------- */
-  .contact-card{
-    max-width:760px;margin:0 auto;text-align:center;
-    background:linear-gradient(135deg,var(--baby) 0%,var(--accent) 100%);
-    border-radius:26px;padding:56px 34px;color:#fff;
-    box-shadow:0 24px 60px rgba(63,155,216,.35);
-  }
+  .contact-card{max-width:760px;margin:0 auto;text-align:center;background:linear-gradient(135deg,var(--baby) 0%,var(--accent) 100%);border-radius:26px;padding:56px 34px;color:#fff;box-shadow:0 24px 60px rgba(63,155,216,.35)}
   .contact-card h3{font-family:'Playfair Display',serif;font-size:clamp(24px,4vw,34px);margin-bottom:10px}
   .contact-card p{opacity:.92;margin-bottom:30px}
   .c-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-  .c-btn{
-    display:inline-block;background:#fff;color:var(--accent-deep);
-    border-radius:50px;padding:15px 30px;text-decoration:none;
-    font-weight:800;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;transition:.3s;
-  }
+  .c-btn{display:inline-block;background:#fff;color:var(--accent-deep);border-radius:50px;padding:15px 30px;text-decoration:none;font-weight:800;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;transition:.3s}
   .c-btn:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,.18)}
   .c-btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.7)}
   .c-btn.ghost:hover{background:rgba(255,255,255,.12)}
 
-  footer{
-    padding:34px 20px;text-align:center;font-size:13px;color:var(--ink-soft);
-    border-top:1px solid var(--line);background:#fff;
-  }
-
+  footer{padding:34px 20px;text-align:center;font-size:13px;color:var(--ink-soft);border-top:1px solid var(--line);background:#fff}
   .reveal{opacity:0;transform:translateY(36px);transition:all .9s cubic-bezier(.2,.8,.2,1)}
   .reveal.visible{opacity:1;transform:none}
 
-  /* ---------- MOBILE ---------- */
   @media (max-width:860px){
     .stats{grid-template-columns:1fr 1fr;margin-top:-30px}
     .about-grid{grid-template-columns:1fr}
@@ -323,10 +163,7 @@
     .brand-name{font-size:15px}
     .rest-grid{grid-template-columns:1fr}
   }
-  @media (prefers-reduced-motion:reduce){
-    *{animation:none!important;transition:none!important}
-    .reveal{opacity:1;transform:none}
-  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
   @media print{
     header,.print-btn,.lang-switch,.c-btns,.hero::before,.hero::after{display:none!important}
     body{background:#fff}
@@ -338,7 +175,6 @@
 </head>
 <body class="lang-ru">
 
-<!-- HEADER -->
 <header>
   <div class="h-in">
     <a href="#" class="brand">
@@ -358,7 +194,6 @@
   </div>
 </header>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-in">
     <div class="hero-tag"><span class="ru">Резюме · 2026</span><span class="en">Curriculum Vitae · 2026</span></div>
@@ -380,15 +215,13 @@
   </div>
 </div>
 
-<!-- STATS -->
 <div class="stats">
   <div class="stat"><b>25,5</b><span><span class="ru">лет опыта</span><span class="en">years of experience</span></span></div>
   <div class="stat"><b>180 000 ₽</b><span><span class="ru">желаемая зарплата</span><span class="en">expected salary (net)</span></span></div>
   <div class="stat"><b>7</b><span><span class="ru">компаний</span><span class="en">companies</span></span></div>
-  <div class="stat"><b>12+</b><span><span class="ru">объектов реставрации</span><span class="en">restoration projects</span></span></div>
+  <div class="stat"><b>11</b><span><span class="ru">объектов реставрации</span><span class="en">restoration projects</span></span></div>
 </div>
 
-<!-- ABOUT -->
 <section class="reveal">
   <div class="wrap">
     <h2 class="sec-title"><span class="ru">Обо мне</span><span class="en">About Me</span></h2>
@@ -412,7 +245,6 @@
   </div>
 </section>
 
-<!-- EXPERIENCE -->
 <section class="sec-soft reveal">
   <div class="wrap">
     <h2 class="sec-title"><span class="ru">Опыт работы</span><span class="en">Work Experience</span></h2>
@@ -421,7 +253,6 @@
 
     <div class="timeline">
 
-      <!-- 1. Greenfield -->
       <div class="t-item"><div class="t-card">
         <div class="t-top"><div class="t-co"><span class="ru">ЗАО «Гринфилд Констракшн»</span><span class="en">Greenfield Construction JSC</span></div><div class="t-date"><span class="ru">Ноябрь 2025 — н. в.</span><span class="en">Nov 2025 — present</span></div></div>
         <div class="t-role"><span class="ru">Инженер-сметчик</span><span class="en">Estimator Engineer</span></div>
@@ -435,18 +266,15 @@
         </ul>
       </div></div>
 
-      <!-- 2. SP Group -->
       <div class="t-item"><div class="t-card featured">
         <div class="t-badge"><span class="ru">★ Ключевой опыт</span><span class="en">★ Key Experience</span></div>
         <div class="t-top"><div class="t-co"><span class="ru">СП Групп</span><span class="en">SP Group</span></div><div class="t-date"><span class="ru">Январь 2023 — н. в.</span><span class="en">Jan 2023 — present</span></div></div>
         <div class="t-role"><span class="ru">Ведущий инженер-сметчик</span><span class="en">Lead Estimator Engineer</span></div>
         <div class="t-loc"><span class="ru">Москва · Дорожное, жилищное и коммерческое строительство</span><span class="en">Moscow · Road, residential & commercial construction</span></div>
-        
         <div class="t-photos">
-          <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?auto=format&fit=crop&w=600&q=80" alt="Border checkpoint" loading="lazy">
-          <img src="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?auto=format&fit=crop&w=600&q=80" alt="Road construction" loading="lazy">
+          <img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/4804edc91-8ef6-4718-93e4-ea6b71048eef6911.png" alt="Пограничный пункт" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?auto=format&fit=crop&w=600&q=80" alt="Дорожное строительство" loading="lazy">
         </div>
-
         <div class="t-obj">
           <b><span class="ru">Объекты:</span><span class="en">Projects:</span></b>
           <span class="ru">погранпункты «Ратманово» (полный пакет документации для сдачи объекта), «Ивангород» (исполнительная и сметная документация), «Петухово» (сметы для госэкспертизы).</span>
@@ -463,13 +291,11 @@
         </ul>
       </div></div>
 
-      <!-- 3. Konstrakt (Tesaran Residence photos) -->
       <div class="t-item"><div class="t-card featured">
         <div class="t-badge"><span class="ru">★ Ключевой опыт</span><span class="en">★ Key Experience</span></div>
         <div class="t-top"><div class="t-co"><span class="ru">ООО «Констракт»</span><span class="en">Konstrakt LLC</span></div><div class="t-date"><span class="ru">Март 2024 — Ноябрь 2025</span><span class="en">Mar 2024 — Nov 2025</span></div></div>
         <div class="t-role"><span class="ru">Инженер-сметчик</span><span class="en">Estimator Engineer</span></div>
         <div class="t-loc"><span class="ru">Армения · Строительство жилищное</span><span class="en">Armenia · Residential construction</span></div>
-
         <div class="t-obj">
           <b><span class="ru">Объект:</span><span class="en">Project:</span></b>
           <span class="ru">Tesaran Residence — жилой комплекс, Ереван (Армения). Фото: instagram.com/tesaran.residence</span>
@@ -477,10 +303,9 @@
         </div>
         <div class="t-photos">
           <img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/4adcad156-1a81-4358-a748-9a882a4f35885359.png" alt="Tesaran Residence — вилла" loading="lazy">
-          <img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/5adcad156-1a81-4358-a748-9a882a4f35888361.png" alt="Tesaran Residence — бассейн и клубный дом" loading="lazy">
+          <img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/5adcad156-1a81-4358-a748-9a882a4f35888361.png" alt="Tesaran Residence — бассейн" loading="lazy">
           <img class="wide" src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/4adcad156-1a81-4358-a748-9a882a4f35889252.png" alt="Tesaran Residence — таунхаус" loading="lazy">
         </div>
-
         <ul>
           <li><span class="ru">Сметы на СМР по коммерческим расценкам (Excel)</span><span class="en">Construction estimates at commercial rates (Excel)</span></li>
           <li><span class="ru">Дефектные ведомости по объектам</span><span class="en">Defect statements per facility</span></li>
@@ -489,7 +314,6 @@
         </ul>
       </div></div>
 
-      <!-- 4. KES -->
       <div class="t-item"><div class="t-card">
         <div class="t-top"><div class="t-co"><span class="ru">ООО «КЭС» — Королёвские электрические сети</span><span class="en">KES — Korolyov Electric Networks</span></div><div class="t-date"><span class="ru">Июль 2022 — Декабрь 2022</span><span class="en">Jul 2022 — Dec 2022</span></div></div>
         <div class="t-role"><span class="ru">Ведущий инженер-сметчик</span><span class="en">Lead Estimator Engineer</span></div>
@@ -502,13 +326,11 @@
         </ul>
       </div></div>
 
-      <!-- 5. Orion Stroy -->
       <div class="t-item"><div class="t-card featured">
         <div class="t-badge"><span class="ru">★ Ключевой опыт</span><span class="en">★ Key Experience</span></div>
         <div class="t-top"><div class="t-co"><span class="ru">ООО «Орион Строй»</span><span class="en">Orion Stroy LLC</span></div><div class="t-date"><span class="ru">Август 2017 — Июль 2022</span><span class="en">Aug 2017 — Jul 2022</span></div></div>
         <div class="t-role"><span class="ru">Сметчик</span><span class="en">Estimator</span></div>
         <div class="t-loc"><span class="ru">Москва · Дорожное и коммерческое строительство</span><span class="en">Moscow · Road & commercial construction</span></div>
-
         <div class="t-obj">
           <b><span class="ru">Серпухов:</span><span class="en">Serpukhov:</span></b>
           <span class="ru">площадь Ленина — благоустройство; благоустройство территории от пл. Революции по ул. 15 лет Комсомола до детской поликлиники (ул. Шнырева).</span>
@@ -516,9 +338,8 @@
         </div>
         <div class="t-photos">
           <img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/257666bf7-bee9-4a39-bc5b-8a283baf93f14817.png" alt="Серпухов, площадь Ленина" loading="lazy">
-          <img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/657666bf7-bee9-4a39-bc5b-8a283baf93f18880.png" alt="Серпухов, благоустройство пешеходной зоны" loading="lazy">
+          <img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/657666bf7-bee9-4a39-bc5b-8a283baf93f18880.png" alt="Серпухов, пешеходная зона" loading="lazy">
         </div>
-
         <div class="t-obj">
           <b><span class="ru">Аэропорт Шереметьево:</span><span class="en">Sheremetyevo Airport:</span></b>
           <span class="ru">реконструкция выезда с зоны «Прилет» терминалов B, C международного аэропорта Шереметьево.</span>
@@ -527,26 +348,23 @@
         <div class="t-photos one">
           <img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/057666bf7-bee9-4a39-bc5b-8a283baf93f18339.png" alt="Шереметьево, Терминал B" loading="lazy">
         </div>
-
         <div class="t-obj">
           <b><span class="ru">Мытищи — вагоностроительные и вагоноремонтные заводы:</span><span class="en">Mytishchi — carriage-building & carriage-repair plants:</span></b>
           <span class="ru">ремонт зданий и сооружений.</span>
           <span class="en">repair of buildings and structures.</span>
         </div>
         <div class="t-photos">
-          <img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/1d7533f44-0ab5-4049-984f-025f1e345cea3876.png" alt="Мытищи: вагоностроительный завод" loading="lazy">
+          <img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/1d7533f44-0ab5-4049-984f-025f1e345cea3876.png" alt="Вагоностроительный завод" loading="lazy">
           <img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/3d7533f44-0ab5-4049-984f-025f1e345cea7351.png" alt="Цех вагоноремонтного завода" loading="lazy">
         </div>
-
         <div class="t-obj">
-          <b><span class="ru">Королёв — АО «ЦНИИмаш» (Госкорпорация «Роскосмос»):</span><span class="en">Korolyov — TsNIImash JSC (Roscosmos State Corporation):</span></b>
+          <b><span class="ru">Королёв — АО «ЦНИИмаш» (Госкорпорация «Роскосмос»):</span><span class="en">Korolyov — TsNIImash JSC (Roscosmos):</span></b>
           <span class="ru">головной научно-исследовательский институт Госкорпорации «Роскосмос» — ремонт зданий и сооружений.</span>
           <span class="en">head research institute of Roscosmos State Corporation — repair of buildings and structures.</span>
         </div>
         <div class="t-photos one">
           <img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/1d7533f44-0ab5-4049-984f-025f1e345cea2607.png" alt="ЦНИИмаш, Королёв" loading="lazy">
         </div>
-
         <ul>
           <li><span class="ru">Сметы на СМР в «Смета.ру» (базы МГЭ, СН, ТСНБ, ФЕР) и по коммерческим расценкам</span><span class="en">Construction estimates in Smeta.ru (MGE, SN, TSNB, FER databases) and commercial rates</span></li>
           <li><span class="ru">Инженерные системы: отопление, вентиляция, водоснабжение, канализация, противодымная защита, противопожарный водопровод, благоустройство</span><span class="en">Engineering systems: heating, ventilation, water supply, sewerage, smoke protection, fire water supply, landscaping</span></li>
@@ -556,16 +374,13 @@
         </ul>
       </div></div>
 
-      <!-- 6. Ministry -->
       <div class="t-item"><div class="t-card">
         <div class="t-top"><div class="t-co"><span class="ru">Министерство образования, науки, культуры и спорта РА (ԿԳՍ)</span><span class="en">Ministry of Education, Science, Culture and Sports of RA (MESCS)</span></div><div class="t-date"><span class="ru">2015 — 2017</span><span class="en">2015 — 2017</span></div></div>
         <div class="t-role"><span class="ru">Инженер-сметчик</span><span class="en">Estimator Engineer</span></div>
         <div class="t-loc"><span class="ru">Ереван, Армения · Государственный сектор</span><span class="en">Yerevan, Armenia · Public sector</span></div>
-        
         <div class="t-photos one">
-          <img src="https://images.unsplash.com/photo-1589994965851-a8f479c573a9?auto=format&fit=crop&w=800&q=80" alt="Government Ministry Building Yerevan" loading="lazy">
+          <img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/8804edc91-8ef6-4718-93e4-ea6b71048eef1897.png" alt="Правительственное здание, Ереван" loading="lazy">
         </div>
-
         <ul>
           <li><span class="ru">Составление смет на капитальный ремонт школ, детских садов, спортивных и культурных учреждений</span><span class="en">Estimates for major repairs of schools, kindergartens, sports and cultural facilities</span></li>
           <li><span class="ru">Подготовка тендерной документации и работа с государственными закупками</span><span class="en">Tender documentation and public procurement</span></li>
@@ -574,7 +389,6 @@
         </ul>
       </div></div>
 
-      <!-- 7. Electric Networks Accountant -->
       <div class="t-item"><div class="t-card">
         <div class="t-top"><div class="t-co"><span class="ru">ЗАО «Эл. сети Армении», филиал «Мусалер»</span><span class="en">Electric Networks of Armenia JSC, Musaler branch</span></div><div class="t-date"><span class="ru">Май 2014 — Октябрь 2014</span><span class="en">May 2014 — Oct 2014</span></div></div>
         <div class="t-role"><span class="ru">Ведущий бухгалтер</span><span class="en">Chief Accountant</span></div>
@@ -586,7 +400,6 @@
         </ul>
       </div></div>
 
-      <!-- 8. Electric Networks Programmer -->
       <div class="t-item"><div class="t-card">
         <div class="t-top"><div class="t-co"><span class="ru">ЗАО «Эл. сети Армении», филиал «Мусалер»</span><span class="en">Electric Networks of Armenia JSC, Musaler branch</span></div><div class="t-date"><span class="ru">Февраль 1998 — Май 2014</span><span class="en">Feb 1998 — May 2014</span></div></div>
         <div class="t-role"><span class="ru">Инженер-программист</span><span class="en">Engineer-Programmer</span></div>
@@ -602,7 +415,7 @@
   </div>
 </section>
 
-<!-- RESTORATION PROJECTS -->
+<!-- RESTORATION (Zvartnots removed, all photos fixed) -->
 <section class="reveal">
   <div class="wrap">
     <h2 class="sec-title"><span class="ru">Проекты реставрации</span><span class="en">Restoration Projects</span></h2>
@@ -610,69 +423,93 @@
     <p class="sec-sub"><span class="ru">Сметное сопровождение восстановления исторических и культурных памятников Армении.</span><span class="en">Estimate support for the restoration of historical and cultural monuments in Armenia.</span></p>
 
     <div class="rest-group">
-      <h3 class="rest-subtitle"><span class="ru">Проекты Министерства (ԿԳՄՍ)</span><span class="en">Ministry Projects (MESCS)</span></h3>
+      <h3 class="rest-subtitle"><span class="ru">Проекты Министерства (ԿԳՄ)</span><span class="en">Ministry Projects (MESCS)</span></h3>
       <div class="rest-grid">
-        <div class="rest-card">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Aruchavank_2023.jpg/640px-Aruchavank_2023.jpg" alt="Аруч" loading="lazy">
-          <div class="rest-info"><h4><span class="ru">Аруч</span><span class="en">Aruch</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div>
-        </div>
-        <div class="rest-card">
-          <img src="https://images.unsplash.com/photo-1599587473628-f5392528a11c?auto=format&fit=crop&w=600&q=80" alt="Багаберд" loading="lazy">
-          <div class="rest-info"><h4><span class="ru">Багаберд</span><span class="en">Baghaberd</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div>
-        </div>
-        <div class="rest-card">
-          <img src="https://images.unsplash.com/photo-1589307357824-22232222688c?auto=format&fit=crop&w=600&q=80" alt="Барабатум" loading="lazy">
-          <div class="rest-info"><h4><span class="ru">Барабатум</span><span class="en">Barabatum</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div>
-        </div>
-        <div class="rest-card">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Bjni_Fortress_2023.jpg/640px-Bjni_Fortress_2023.jpg" alt="Бджни" loading="lazy">
-          <div class="rest-info"><h4><span class="ru">Бджни</span><span class="en">Bjni</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div>
-        </div>
-        <div class="rest-card">
-          <img src="https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?auto=format&fit=crop&w=600&q=80" alt="Гандзак" loading="lazy">
-          <div class="rest-info"><h4><span class="ru">Гандзак</span><span class="en">Gandzak</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div>
-        </div>
-        <div class="rest-card">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Garni_Armenia_2023.jpg/640px-Garni_Armenia_2023.jpg" alt="Гарни" loading="lazy">
-          <div class="rest-info"><h4><span class="ru">Гарни (водохранилище)</span><span class="en">Garni Reservoir</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div>
-        </div>
-        <div class="rest-card">
-          <img src="https://images.unsplash.com/photo-1596395349699-5e424881bc2d?auto=format&fit=crop&w=600&q=80" alt="Ерцванк" loading="lazy">
-          <div class="rest-info"><h4><span class="ru">Ерцванк</span><span class="en">Yertsvank</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div>
-        </div>
-        <div class="rest-card">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Zorats_Karer_2023.jpg/640px-Zorats_Karer_2023.jpg" alt="Зорац Карер" loading="lazy">
-          <div class="rest-info"><h4><span class="ru">Зорац Карер</span><span class="en">Zorats Karer</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div>
-        </div>
-        <div class="rest-card">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Zvartnots_cathedral_2023.jpg/640px-Zvartnots_cathedral_2023.jpg" alt="Звартноц" loading="lazy">
-          <div class="rest-info"><h4><span class="ru">Звартноц</span><span class="en">Zvartnots</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div>
-        </div>
+        <div class="rest-card"><img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/5804edc91-8ef6-4718-93e4-ea6b71048eef2427.png" alt="Аруч" loading="lazy"><div class="rest-info"><h4><span class="ru">Аруч</span><span class="en">Aruch</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div></div>
+        <div class="rest-card"><img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/3804edc91-8ef6-4718-93e4-ea6b71048eef8896.png" alt="Багаберд" loading="lazy"><div class="rest-info"><h4><span class="ru">Багаберд</span><span class="en">Baghaberd</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div></div>
+        <div class="rest-card"><img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/2804edc91-8ef6-4718-93e4-ea6b71048eef1978.png" alt="Барабатум" loading="lazy"><div class="rest-info"><h4><span class="ru">Барабатум</span><span class="en">Barabatum</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div></div>
+        <div class="rest-card"><img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/5804edc91-8ef6-4718-93e4-ea6b71048eef3544.png" alt="Бджни" loading="lazy"><div class="rest-info"><h4><span class="ru">Бджни</span><span class="en">Bjni</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div></div>
+        <div class="rest-card"><img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/1804edc91-8ef6-4718-93e4-ea6b71048eef6768.png" alt="Гандзак" loading="lazy"><div class="rest-info"><h4><span class="ru">Гандзак</span><span class="en">Gandzak</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div></div>
+        <div class="rest-card"><img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/4804edc91-8ef6-4718-93e4-ea6b71048eef1292.png" alt="Гарни" loading="lazy"><div class="rest-info"><h4><span class="ru">Гарни (водохранилище)</span><span class="en">Garni Reservoir</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div></div>
+        <div class="rest-card"><img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/3804edc91-8ef6-4718-93e4-ea6b71048eef5283.png" alt="Ерцванк" loading="lazy"><div class="rest-info"><h4><span class="ru">Ерцванк</span><span class="en">Yertsvank</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div></div>
+        <div class="rest-card"><img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/5804edc91-8ef6-4718-93e4-ea6b71048eef8529.png" alt="Зорац Карер" loading="lazy"><div class="rest-info"><h4><span class="ru">Зорац Карер</span><span class="en">Zorats Karer</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div></div>
       </div>
     </div>
 
     <div class="rest-group">
       <h3 class="rest-subtitle"><span class="ru">Дополнительные объекты реставрации</span><span class="en">Additional Restoration Projects</span></h3>
       <div class="rest-grid">
-        <div class="rest-card">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Pemzashen_Church_2023.jpg/640px-Pemzashen_Church_2023.jpg" alt="Пемзашен" loading="lazy">
-          <div class="rest-info"><h4><span class="ru">Пемзашен</span><span class="en">Pemzashen</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div>
-        </div>
-        <div class="rest-card">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Kayan_Fortress_2023.jpg/640px-Kayan_Fortress_2023.jpg" alt="Каян Берд" loading="lazy">
-          <div class="rest-info"><h4><span class="ru">Каян Берд</span><span class="en">Kayan Berd</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div>
-        </div>
-        <div class="rest-card">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Haghpat_Monastery_2023.jpg/640px-Haghpat_Monastery_2023.jpg" alt="Ахпат" loading="lazy">
-          <div class="rest-info"><h4><span class="ru">Ахпат</span><span class="en">Haghpat</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div>
-        </div>
+        <div class="rest-card"><img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/0804edc91-8ef6-4718-93e4-ea6b71048eef4953.png" alt="Пемзашен" loading="lazy"><div class="rest-info"><h4><span class="ru">Пемзашен</span><span class="en">Pemzashen</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div></div>
+        <div class="rest-card"><img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/6804edc91-8ef6-4718-93e4-ea6b71048eef5625.png" alt="Каян Берд" loading="lazy"><div class="rest-info"><h4><span class="ru">Каян Берд</span><span class="en">Kayan Berd</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div></div>
+        <div class="rest-card"><img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/1804edc91-8ef6-4718-93e4-ea6b71048eef3974.png" alt="Ахпат" loading="lazy"><div class="rest-info"><h4><span class="ru">Ахпат</span><span class="en">Haghpat</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div></div>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- EDUCATION -->
+<!-- NEW: INDUSTRIAL & INFRASTRUCTURE PROJECTS -->
+<section class="sec-soft reveal">
+  <div class="wrap">
+    <h2 class="sec-title"><span class="ru">Промышленные и инфраструктурные проекты</span><span class="en">Industrial & Infrastructure Projects</span></h2>
+    <div class="sec-line"></div>
+    <p class="sec-sub"><span class="ru">Аэропорты, топливные склады, вертолётные ангары, водоводы, капитальный ремонт жилья и тепловых сетей.</span><span class="en">Airports, fuel depots, helicopter hangars, water pipelines, major repairs of housing and heating networks.</span></p>
+    <div class="rest-grid">
+      <div class="rest-card">
+        <img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/0804edc91-8ef6-4718-93e4-ea6b71048eef9294.png" alt="Склад авиатоплива" loading="lazy">
+        <div class="rest-info">
+          <h4><span class="ru">Склад авиатоплива — аэропорт «Звартноц»</span><span class="en">Aviation fuel depot — Zvartnots Airport</span></h4>
+          <p class="addr"><span class="ru">Реконструкция склада хранения авиационного топлива, строительство ЦЗС и модернизация колодцев системы топливозаправки · ООО «Азума Про»</span><span class="en">Reconstruction of the aviation fuel storage depot, construction of the central fueling station and modernization of refueling wells · Azuma Pro LLC</span></p>
+        </div>
+      </div>
+      <div class="rest-card">
+        <img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/5804edc91-8ef6-4718-93e4-ea6b71048eef3632.png" alt="Вертолётный ангар" loading="lazy">
+        <div class="rest-info">
+          <h4><span class="ru">Вертолётный ангар — Южно-Сахалинск</span><span class="en">Helicopter hangar — Yuzhno-Sakhalinsk</span></h4>
+          <p class="addr"><span class="ru">Сметное сопровождение строительства ангара</span><span class="en">Estimate support for the hangar construction</span></p>
+        </div>
+      </div>
+      <div class="rest-card">
+        <img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/1804edc91-8ef6-4718-93e4-ea6b71048eef7272.png" alt="Водовод Тигиль" loading="lazy">
+        <div class="rest-info">
+          <h4><span class="ru">Водовод с водозабором — с. Тигиль</span><span class="en">Water pipeline with water intake — Tigil</span></h4>
+          <p class="addr"><span class="ru">ООО «Азума Про»</span><span class="en">Azuma Pro LLC</span></p>
+        </div>
+      </div>
+      <div class="rest-card">
+        <img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/3804edc91-8ef6-4718-93e4-ea6b71048eef7608.png" alt="Капитальный ремонт фасада" loading="lazy">
+        <div class="rest-info">
+          <h4><span class="ru">Капитальный ремонт жилых домов — Москва</span><span class="en">Major repair of residential buildings — Moscow</span></h4>
+          <p class="addr"><span class="ru">ул. Гамалеи, д.19, к.1 (СЗАО) · Днепропетровская ул., д.7, к.2 (ЮАО) · Бибиревская ул., 17в (СВАО) · Дубнинская ул., д.32, корп.4.3 (САО)</span><span class="en">Gamalei St. 19/1 (NW) · Dnepropetrovskaya St. 7/2 (S) · Bibirevskaya St. 17v (NE) · Dubninskaya St. 32/4.3 (N)</span></p>
+        </div>
+      </div>
+      <div class="rest-card">
+        <img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/2804edc91-8ef6-4718-93e4-ea6b71048eef2711.png" alt="Тепловые сети Лыткарино" loading="lazy">
+        <div class="rest-info">
+          <h4><span class="ru">Тепловые сети №1 — Лыткарино</span><span class="en">Heating networks No.1 — Lytkarino</span></h4>
+          <p class="addr"><span class="ru">Капитальный ремонт участков тепловых сетей от ТК-3 до ТК-154 (квартал 2, мкр.5) · ООО «ГК «ФСК»</span><span class="en">Major repair of heating network sections TK-3 → TK-154 (quarter 2, micro-district 5) · FSK Group LLC</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEW: YEREVAN KENTRON -->
+<section class="reveal">
+  <div class="wrap">
+    <h2 class="sec-title">Երևանի կենտրոն թաղապետարան</h2>
+    <div class="sec-line"></div>
+    <p class="sec-sub"><span class="ru">Администрация района Кентрон г. Еревана — благоустройство дворов многоквартирных домов.</span><span class="en">Kentron District Administration of Yerevan — courtyard improvement of apartment buildings.</span></p>
+    <div class="rest-grid">
+      <div class="rest-card"><img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/4804edc91-8ef6-4718-93e4-ea6b71048eef4304.png" alt="Աբովյան 39" loading="lazy"><div class="rest-info"><h4>Աբովյան 39 · <span class="ru">Абовяна 39</span><span class="en">Abovyan 39</span></h4><p><span class="ru">Благоустройство двора</span><span class="en">Courtyard improvement</span></p><p class="addr">ՀՀ ք. Երևան, կենտրոն</p></div></div>
+      <div class="rest-card"><img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/7804edc91-8ef6-4718-93e4-ea6b71048eef3749.png" alt="Ամիրյան 18ա" loading="lazy"><div class="rest-info"><h4>Ամիրյան 18ա · <span class="ru">Амиряна 18а</span><span class="en">Amiryan 18a</span></h4><p><span class="ru">Благоустройство двора</span><span class="en">Courtyard improvement</span></p><p class="addr">ՀՀ ք. Երևան, կենտրոն</p></div></div>
+      <div class="rest-card"><img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/4804edc91-8ef6-4718-93e4-ea6b71048eef4628.png" alt="Ծատուրյան 34" loading="lazy"><div class="rest-info"><h4>Ծատուրյան 34 · <span class="ru">Цатуряна 34</span><span class="en">Tsaturyan 34</span></h4><p><span class="ru">Благоустройство двора</span><span class="en">Courtyard improvement</span></p><p class="addr">ՀՀ ք. Երևան, կենտրոն</p></div></div>
+      <div class="rest-card"><img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/6804edc91-8ef6-4718-93e4-ea6b71048eef2090.png" alt="Մաշտոց 37" loading="lazy"><div class="rest-info"><h4>Մաշտոց 37 · <span class="ru">Маштоца 37</span><span class="en">Mashtots 37</span></h4><p><span class="ru">Благоустройство двора</span><span class="en">Courtyard improvement</span></p><p class="addr">ՀՀ ք. Երևան, կենտրոն</p></div></div>
+      <div class="rest-card"><img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/1804edc91-8ef6-4718-93e4-ea6b71048eef9247.png" alt="Մաշտոց 51" loading="lazy"><div class="rest-info"><h4>Մաշտոց 51 · <span class="ru">Маштоца 51</span><span class="en">Mashtots 51</span></h4><p><span class="ru">Благоустройство двора</span><span class="en">Courtyard improvement</span></p><p class="addr">ՀՀ ք. Երևան, կենտրոն</p></div></div>
+      <div class="rest-card"><img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/2804edc91-8ef6-4718-93e4-ea6b71048eef3702.png" alt="Սայաթ-Նովա 37" loading="lazy"><div class="rest-info"><h4>Սայաթ-Նովա 37 · <span class="ru">Саят-Новы 37</span><span class="en">Sayat-Nova 37</span></h4><p><span class="ru">Благоустройство двора</span><span class="en">Courtyard improvement</span></p><p class="addr">ՀՀ ք. Երևան, կենտրոն</p></div></div>
+    </div>
+  </div>
+</section>
+
 <section class="sec-soft reveal">
   <div class="wrap">
     <h2 class="sec-title"><span class="ru">Образование</span><span class="en">Education</span></h2>
@@ -687,84 +524,31 @@
   </div>
 </section>
 
-<!-- SKILLS -->
 <section class="reveal">
   <div class="wrap">
     <h2 class="sec-title"><span class="ru">Навыки</span><span class="en">Skills</span></h2>
     <div class="sec-line"></div>
     <div class="skills-grid">
-      <div class="card skill-card">
-        <h3><i></i><span class="ru">Сметное дело</span><span class="en">Estimating</span></h3>
-        <div class="tags">
-          <span class="tag"><span class="ru">ФЕР</span><span class="en">FER</span></span>
-          <span class="tag"><span class="ru">ГЭСН</span><span class="en">GESN</span></span>
-          <span class="tag"><span class="ru">ТЕР</span><span class="en">TER</span></span>
-          <span class="tag">ТСНБ-74</span>
-          <span class="tag"><span class="ru">СНиП-1984</span><span class="en">SNiP-1984</span></span>
-          <span class="tag"><span class="ru">МГЭ</span><span class="en">MGE</span></span>
-          <span class="tag"><span class="ru">Коммерческие расценки</span><span class="en">Commercial rates</span></span>
-        </div>
-      </div>
-      <div class="card skill-card">
-        <h3><i></i><span class="ru">Программы</span><span class="en">Software</span></h3>
-        <div class="tags">
-          <span class="tag"><span class="ru">Смета.ру</span><span class="en">Smeta.ru</span></span>
-          <span class="tag"><span class="ru">Гранд-Смета</span><span class="en">Grand-Smeta</span></span>
-          <span class="tag">AutoCAD</span>
-          <span class="tag">Excel</span>
-          <span class="tag">Word</span>
-        </div>
-      </div>
-      <div class="card skill-card">
-        <h3><i></i><span class="ru">Документация</span><span class="en">Documentation</span></h3>
-        <div class="tags">
-          <span class="tag"><span class="ru">КС-2</span><span class="en">KS-2</span></span>
-          <span class="tag"><span class="ru">КС-3</span><span class="en">KS-3</span></span>
-          <span class="tag"><span class="ru">КС-6</span><span class="en">KS-6</span></span>
-          <span class="tag"><span class="ru">М-29</span><span class="en">M-29</span></span>
-          <span class="tag"><span class="ru">М-19</span><span class="en">M-19</span></span>
-          <span class="tag"><span class="ru">ВОР / ДВР</span><span class="en">VOR / DVR</span></span>
-          <span class="tag"><span class="ru">Дефектные ведомости</span><span class="en">Defect statements</span></span>
-        </div>
-      </div>
-      <div class="card skill-card">
-        <h3><i></i><span class="ru">Дополнительно</span><span class="en">Additional</span></h3>
-        <div class="tags">
-          <span class="tag"><span class="ru">Тендеры</span><span class="en">Tenders</span></span>
-          <span class="tag"><span class="ru">Госэкспертиза</span><span class="en">State expert review</span></span>
-          <span class="tag"><span class="ru">Госзакупки</span><span class="en">Public procurement</span></span>
-          <span class="tag"><span class="ru">Защита смет</span><span class="en">Estimate defense</span></span>
-          <span class="tag"><span class="ru">Коммерческие предложения</span><span class="en">Commercial proposals</span></span>
-          <span class="tag"><span class="ru">Исполнительность</span><span class="en">Reliability</span></span>
-        </div>
-      </div>
+      <div class="card skill-card"><h3><i></i><span class="ru">Сметное дело</span><span class="en">Estimating</span></h3><div class="tags"><span class="tag"><span class="ru">ФЕР</span><span class="en">FER</span></span><span class="tag"><span class="ru">ГЭСН</span><span class="en">GESN</span></span><span class="tag"><span class="ru">ТЕР</span><span class="en">TER</span></span><span class="tag">ТСНБ-74</span><span class="tag"><span class="ru">СНиП-1984</span><span class="en">SNiP-1984</span></span><span class="tag"><span class="ru">МГЭ</span><span class="en">MGE</span></span><span class="tag"><span class="ru">Коммерческие расценки</span><span class="en">Commercial rates</span></span></div></div>
+      <div class="card skill-card"><h3><i></i><span class="ru">Программы</span><span class="en">Software</span></h3><div class="tags"><span class="tag"><span class="ru">Смета.ру</span><span class="en">Smeta.ru</span></span><span class="tag"><span class="ru">Гранд-Смета</span><span class="en">Grand-Smeta</span></span><span class="tag">AutoCAD</span><span class="tag">Excel</span><span class="tag">Word</span></div></div>
+      <div class="card skill-card"><h3><i></i><span class="ru">Документация</span><span class="en">Documentation</span></h3><div class="tags"><span class="tag"><span class="ru">КС-2</span><span class="en">KS-2</span></span><span class="tag"><span class="ru">КС-3</span><span class="en">KS-3</span></span><span class="tag"><span class="ru">КС-6</span><span class="en">KS-6</span></span><span class="tag"><span class="ru">М-29</span><span class="en">M-29</span></span><span class="tag"><span class="ru">М-19</span><span class="en">M-19</span></span><span class="tag"><span class="ru">ВОР / ДВР</span><span class="en">VOR / DVR</span></span><span class="tag"><span class="ru">Дефектные ведомости</span><span class="en">Defect statements</span></span></div></div>
+      <div class="card skill-card"><h3><i></i><span class="ru">Дополнительно</span><span class="en">Additional</span></h3><div class="tags"><span class="tag"><span class="ru">Тендеры</span><span class="en">Tenders</span></span><span class="tag"><span class="ru">Госэкспертиза</span><span class="en">State expert review</span></span><span class="tag"><span class="ru">Госзакупки</span><span class="en">Public procurement</span></span><span class="tag"><span class="ru">Защита смет</span><span class="en">Estimate defense</span></span><span class="tag"><span class="ru">Коммерческие предложения</span><span class="en">Commercial proposals</span></span><span class="tag"><span class="ru">Исполнительность</span><span class="en">Reliability</span></span></div></div>
     </div>
   </div>
 </section>
 
-<!-- LANGUAGES -->
 <section class="sec-soft reveal">
   <div class="wrap">
     <h2 class="sec-title"><span class="ru">Языки</span><span class="en">Languages</span></h2>
     <div class="sec-line"></div>
     <div class="langs">
-      <div class="lang-row">
-        <div><b><span class="ru">Армянский</span><span class="en">Armenian</span></b><small><span class="ru">Родной</span><span class="en">Native</span></small></div>
-        <div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
-      </div>
-      <div class="lang-row">
-        <div><b><span class="ru">Русский</span><span class="en">Russian</span></b><small>C1 · <span class="ru">Продвинутый</span><span class="en">Advanced</span></small></div>
-        <div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
-      </div>
-      <div class="lang-row">
-        <div><b><span class="ru">Английский</span><span class="en">English</span></b><small>A1 · <span class="ru">Начальный</span><span class="en">Beginner</span></small></div>
-        <div class="dots"><i class="on"></i><i></i><i></i><i></i><i></i></div>
-      </div>
+      <div class="lang-row"><div><b><span class="ru">Армянский</span><span class="en">Armenian</span></b><small><span class="ru">Родной</span><span class="en">Native</span></small></div><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div></div>
+      <div class="lang-row"><div><b><span class="ru">Русский</span><span class="en">Russian</span></b><small>C1 · <span class="ru">Продвинутый</span><span class="en">Advanced</span></small></div><div class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div></div>
+      <div class="lang-row"><div><b><span class="ru">Английский</span><span class="en">English</span></b><small>A1 · <span class="ru">Начальный</span><span class="en">Beginner</span></small></div><div class="dots"><i class="on"></i><i></i><i></i><i></i><i></i></div></div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="reveal">
   <div class="wrap">
     <div class="contact-card">
@@ -790,9 +574,7 @@
     document.body.classList.remove('lang-ru','lang-en');
     document.body.classList.add('lang-' + l);
     document.documentElement.lang = l;
-    document.title = (l === 'ru')
-      ? 'Алина Бабаян — инженер-сметчик · резюме'
-      : 'Alina Babayan — Estimator Engineer · CV';
+    document.title = (l === 'ru') ? 'Алина Бабаян — инженер-сметчик · резюме' : 'Alina Babayan — Estimator Engineer · CV';
     btnRu.classList.toggle('active', l === 'ru');
     btnEn.classList.toggle('active', l === 'en');
     try{ localStorage.setItem('cv-lang', l); }catch(e){}
