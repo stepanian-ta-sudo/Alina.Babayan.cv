@@ -32,7 +32,6 @@
     -webkit-tap-highlight-color:transparent;
     overflow-x:hidden;
   }
-  /* LANGUAGE TOGGLE LOGIC */
   body.lang-ru .en{display:none}
   body.lang-en .ru{display:none}
 
@@ -173,6 +172,22 @@
     padding:28px 30px;transition:.35s;box-shadow:0 8px 24px rgba(18,58,92,.05);
   }
   .t-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(63,155,216,.16);border-color:var(--baby)}
+  .t-card.featured{
+    border:2px solid var(--baby);
+    box-shadow:0 18px 44px rgba(63,155,216,.18);
+  }
+  .t-badge{
+    display:inline-block;margin-bottom:12px;
+    background:linear-gradient(135deg,var(--baby),var(--accent));
+    color:#fff;font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;
+    border-radius:50px;padding:6px 14px;
+  }
+  .t-photos{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:16px 0 6px}
+  .t-photos img{width:100%;height:150px;object-fit:cover;border-radius:12px;border:1px solid var(--line)}
+  .t-photos img.wide{grid-column:1/-1;height:200px}
+  .t-photos.one{grid-template-columns:1fr}
+  .t-photos.one img{height:200px}
+
   .t-top{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:baseline;margin-bottom:6px}
   .t-co{font-family:'Playfair Display',serif;font-weight:600;font-size:20px}
   .t-date{
@@ -197,6 +212,25 @@
     font-size:13.5px;color:var(--ink-soft);
   }
   .t-obj b{color:var(--accent-deep)}
+
+  /* ---------- RESTORATION PROJECTS ---------- */
+  .rest-group{margin-bottom:60px}
+  .rest-group:last-child{margin-bottom:0}
+  .rest-subtitle{
+    font-family:'Playfair Display',serif;font-size:24px;font-weight:600;text-align:center;margin-bottom:30px;color:var(--ink);
+  }
+  .rest-grid{
+    display:grid;grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));gap:20px;
+  }
+  .rest-card{
+    background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;
+    box-shadow:0 8px 24px rgba(18,58,92,.05);transition:.35s;
+  }
+  .rest-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(63,155,216,.16);border-color:var(--baby)}
+  .rest-card img{width:100%;height:180px;object-fit:cover;display:block}
+  .rest-info{padding:20px}
+  .rest-info h4{font-family:'Playfair Display',serif;font-size:18px;margin-bottom:6px;color:var(--ink)}
+  .rest-info p{font-size:13px;color:var(--accent-deep);font-weight:600;letter-spacing:.5px;text-transform:uppercase}
 
   /* ---------- EDUCATION ---------- */
   .edu-card{max-width:760px;margin:0 auto;display:flex;gap:24px;align-items:center}
@@ -278,23 +312,26 @@
     .t-item::before{left:-24px}
     .edu-card{flex-direction:column;text-align:center}
     .print-btn{display:none}
+    .t-photos img{height:120px}
+    .t-photos img.wide,.t-photos.one img{height:160px}
+    .rest-grid{grid-template-columns:1fr 1fr}
   }
   @media (max-width:420px){
     .stats{grid-template-columns:1fr 1fr;gap:10px}
     .stat{padding:18px 10px}
     .h-in{padding:12px 14px}
     .brand-name{font-size:15px}
+    .rest-grid{grid-template-columns:1fr}
   }
   @media (prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important}
     .reveal{opacity:1;transform:none}
   }
-  /* ---------- PRINT ---------- */
   @media print{
     header,.print-btn,.lang-switch,.c-btns,.hero::before,.hero::after{display:none!important}
     body{background:#fff}
     section{padding:30px 10px}
-    .t-card,.card,.stat{box-shadow:none}
+    .t-card,.card,.stat,.rest-card{box-shadow:none}
     .reveal{opacity:1;transform:none}
   }
 </style>
@@ -347,8 +384,8 @@
 <div class="stats">
   <div class="stat"><b>25,5</b><span><span class="ru">лет опыта</span><span class="en">years of experience</span></span></div>
   <div class="stat"><b>180 000 ₽</b><span><span class="ru">желаемая зарплата</span><span class="en">expected salary (net)</span></span></div>
-  <div class="stat"><b>6</b><span><span class="ru">компаний</span><span class="en">companies</span></span></div>
-  <div class="stat"><b>3</b><span><span class="ru">объекта госграницы</span><span class="en">border-checkpoint projects</span></span></div>
+  <div class="stat"><b>7</b><span><span class="ru">компаний</span><span class="en">companies</span></span></div>
+  <div class="stat"><b>12+</b><span><span class="ru">объектов реставрации</span><span class="en">restoration projects</span></span></div>
 </div>
 
 <!-- ABOUT -->
@@ -358,9 +395,9 @@
     <div class="sec-line"></div>
     <div class="about-grid">
       <div class="card about-txt">
-        <p><span class="ru"><strong>Инженер-сметчик с 25-летним опытом</strong> в жилищном, дорожном и коммерческом строительстве, а также в энергетике.</span><span class="en"><strong>Estimator engineer with 25 years of experience</strong> in residential, road and commercial construction, as well as the energy sector.</span></p>
+        <p><span class="ru"><strong>Инженер-сметчик с 25-летним опытом</strong> в жилищном, дорожном и коммерческом строительстве, а также в энергетике и государственном секторе.</span><span class="en"><strong>Estimator engineer with 25 years of experience</strong> in residential, road and commercial construction, as well as the energy and public sectors.</span></p>
         <p><span class="ru">Составляю локальные, объектные и сводные сметы, ведомости объёмов работ, акты КС-2, КС-3, КС-6, М-29, М-19. Работаю с нормативными базами <strong>ФЕР, ГЭСН, ТЕР, ТСНБ-74, СНиП-1984</strong>.</span><span class="en">I prepare local, object and consolidated estimates, work-volume statements, KS-2 / KS-3 / KS-6 / M-29 / M-19 forms. I work with normative databases <strong>FER, GESN, TER, TSNB-74, SNiP-1984</strong>.</span></p>
-        <p><span class="ru">Готовлю документацию для <strong>государственной экспертизы</strong> и защищаю сметы, участвую в тендерах и готовлю коммерческие предложения.</span><span class="en">I prepare documentation for <strong>state expert review</strong>, defend estimates, participate in tenders and draft commercial proposals.</span></p>
+        <p><span class="ru">Готовлю документацию для <strong>государственной экспертизы</strong> и защищаю сметы, участвую в тендерах и государственных закупках. Имею опыт сметного сопровождения реставрации исторических памятников Армении.</span><span class="en">I prepare documentation for <strong>state expert review</strong>, defend estimates, participate in tenders and public procurement. I have experience in estimate support for the restoration of historical monuments in Armenia.</span></p>
         <p><span class="ru">Готова к <strong>удалённой работе</strong>: полная или частичная занятость, проектные и разовые задания.</span><span class="en">Available for <strong>remote work</strong>: full-time, part-time, project-based and one-off assignments.</span></p>
       </div>
       <div class="card details">
@@ -384,6 +421,7 @@
 
     <div class="timeline">
 
+      <!-- 1. Greenfield -->
       <div class="t-item"><div class="t-card">
         <div class="t-top"><div class="t-co"><span class="ru">ЗАО «Гринфилд Констракшн»</span><span class="en">Greenfield Construction JSC</span></div><div class="t-date"><span class="ru">Ноябрь 2025 — н. в.</span><span class="en">Nov 2025 — present</span></div></div>
         <div class="t-role"><span class="ru">Инженер-сметчик</span><span class="en">Estimator Engineer</span></div>
@@ -397,10 +435,18 @@
         </ul>
       </div></div>
 
-      <div class="t-item"><div class="t-card">
+      <!-- 2. SP Group -->
+      <div class="t-item"><div class="t-card featured">
+        <div class="t-badge"><span class="ru">★ Ключевой опыт</span><span class="en">★ Key Experience</span></div>
         <div class="t-top"><div class="t-co"><span class="ru">СП Групп</span><span class="en">SP Group</span></div><div class="t-date"><span class="ru">Январь 2023 — н. в.</span><span class="en">Jan 2023 — present</span></div></div>
         <div class="t-role"><span class="ru">Ведущий инженер-сметчик</span><span class="en">Lead Estimator Engineer</span></div>
         <div class="t-loc"><span class="ru">Москва · Дорожное, жилищное и коммерческое строительство</span><span class="en">Moscow · Road, residential & commercial construction</span></div>
+        
+        <div class="t-photos">
+          <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?auto=format&fit=crop&w=600&q=80" alt="Border checkpoint" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?auto=format&fit=crop&w=600&q=80" alt="Road construction" loading="lazy">
+        </div>
+
         <div class="t-obj">
           <b><span class="ru">Объекты:</span><span class="en">Projects:</span></b>
           <span class="ru">погранпункты «Ратманово» (полный пакет документации для сдачи объекта), «Ивангород» (исполнительная и сметная документация), «Петухово» (сметы для госэкспертизы).</span>
@@ -417,10 +463,24 @@
         </ul>
       </div></div>
 
-      <div class="t-item"><div class="t-card">
+      <!-- 3. Konstrakt (Tesaran Residence photos) -->
+      <div class="t-item"><div class="t-card featured">
+        <div class="t-badge"><span class="ru">★ Ключевой опыт</span><span class="en">★ Key Experience</span></div>
         <div class="t-top"><div class="t-co"><span class="ru">ООО «Констракт»</span><span class="en">Konstrakt LLC</span></div><div class="t-date"><span class="ru">Март 2024 — Ноябрь 2025</span><span class="en">Mar 2024 — Nov 2025</span></div></div>
         <div class="t-role"><span class="ru">Инженер-сметчик</span><span class="en">Estimator Engineer</span></div>
         <div class="t-loc"><span class="ru">Армения · Строительство жилищное</span><span class="en">Armenia · Residential construction</span></div>
+
+        <div class="t-obj">
+          <b><span class="ru">Объект:</span><span class="en">Project:</span></b>
+          <span class="ru">Tesaran Residence — жилой комплекс, Ереван (Армения). Фото: instagram.com/tesaran.residence</span>
+          <span class="en">Tesaran Residence — residential complex, Yerevan (Armenia). Photos: instagram.com/tesaran.residence</span>
+        </div>
+        <div class="t-photos">
+          <img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/4adcad156-1a81-4358-a748-9a882a4f35885359.png" alt="Tesaran Residence — вилла" loading="lazy">
+          <img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/5adcad156-1a81-4358-a748-9a882a4f35888361.png" alt="Tesaran Residence — бассейн и клубный дом" loading="lazy">
+          <img class="wide" src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/4adcad156-1a81-4358-a748-9a882a4f35889252.png" alt="Tesaran Residence — таунхаус" loading="lazy">
+        </div>
+
         <ul>
           <li><span class="ru">Сметы на СМР по коммерческим расценкам (Excel)</span><span class="en">Construction estimates at commercial rates (Excel)</span></li>
           <li><span class="ru">Дефектные ведомости по объектам</span><span class="en">Defect statements per facility</span></li>
@@ -429,6 +489,7 @@
         </ul>
       </div></div>
 
+      <!-- 4. KES -->
       <div class="t-item"><div class="t-card">
         <div class="t-top"><div class="t-co"><span class="ru">ООО «КЭС» — Королёвские электрические сети</span><span class="en">KES — Korolyov Electric Networks</span></div><div class="t-date"><span class="ru">Июль 2022 — Декабрь 2022</span><span class="en">Jul 2022 — Dec 2022</span></div></div>
         <div class="t-role"><span class="ru">Ведущий инженер-сметчик</span><span class="en">Lead Estimator Engineer</span></div>
@@ -441,10 +502,51 @@
         </ul>
       </div></div>
 
-      <div class="t-item"><div class="t-card">
+      <!-- 5. Orion Stroy -->
+      <div class="t-item"><div class="t-card featured">
+        <div class="t-badge"><span class="ru">★ Ключевой опыт</span><span class="en">★ Key Experience</span></div>
         <div class="t-top"><div class="t-co"><span class="ru">ООО «Орион Строй»</span><span class="en">Orion Stroy LLC</span></div><div class="t-date"><span class="ru">Август 2017 — Июль 2022</span><span class="en">Aug 2017 — Jul 2022</span></div></div>
         <div class="t-role"><span class="ru">Сметчик</span><span class="en">Estimator</span></div>
         <div class="t-loc"><span class="ru">Москва · Дорожное и коммерческое строительство</span><span class="en">Moscow · Road & commercial construction</span></div>
+
+        <div class="t-obj">
+          <b><span class="ru">Серпухов:</span><span class="en">Serpukhov:</span></b>
+          <span class="ru">площадь Ленина — благоустройство; благоустройство территории от пл. Революции по ул. 15 лет Комсомола до детской поликлиники (ул. Шнырева).</span>
+          <span class="en">Lenin Square improvement; improvement of the territory from Revolution Square along 15 Let Komsomola St. to the children's polyclinic (Shnyreva St.).</span>
+        </div>
+        <div class="t-photos">
+          <img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/257666bf7-bee9-4a39-bc5b-8a283baf93f14817.png" alt="Серпухов, площадь Ленина" loading="lazy">
+          <img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/657666bf7-bee9-4a39-bc5b-8a283baf93f18880.png" alt="Серпухов, благоустройство пешеходной зоны" loading="lazy">
+        </div>
+
+        <div class="t-obj">
+          <b><span class="ru">Аэропорт Шереметьево:</span><span class="en">Sheremetyevo Airport:</span></b>
+          <span class="ru">реконструкция выезда с зоны «Прилет» терминалов B, C международного аэропорта Шереметьево.</span>
+          <span class="en">reconstruction of the exit from the “Arrivals” zone of Terminals B & C, Sheremetyevo International Airport.</span>
+        </div>
+        <div class="t-photos one">
+          <img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/057666bf7-bee9-4a39-bc5b-8a283baf93f18339.png" alt="Шереметьево, Терминал B" loading="lazy">
+        </div>
+
+        <div class="t-obj">
+          <b><span class="ru">Мытищи — вагоностроительные и вагоноремонтные заводы:</span><span class="en">Mytishchi — carriage-building & carriage-repair plants:</span></b>
+          <span class="ru">ремонт зданий и сооружений.</span>
+          <span class="en">repair of buildings and structures.</span>
+        </div>
+        <div class="t-photos">
+          <img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/1d7533f44-0ab5-4049-984f-025f1e345cea3876.png" alt="Мытищи: вагоностроительный завод" loading="lazy">
+          <img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/3d7533f44-0ab5-4049-984f-025f1e345cea7351.png" alt="Цех вагоноремонтного завода" loading="lazy">
+        </div>
+
+        <div class="t-obj">
+          <b><span class="ru">Королёв — АО «ЦНИИмаш» (Госкорпорация «Роскосмос»):</span><span class="en">Korolyov — TsNIImash JSC (Roscosmos State Corporation):</span></b>
+          <span class="ru">головной научно-исследовательский институт Госкорпорации «Роскосмос» — ремонт зданий и сооружений.</span>
+          <span class="en">head research institute of Roscosmos State Corporation — repair of buildings and structures.</span>
+        </div>
+        <div class="t-photos one">
+          <img src="https://image.qwenlm.ai/public_source/3598b30d-4fe8-4ba0-a0d8-8d5db5b1e2dd/1d7533f44-0ab5-4049-984f-025f1e345cea2607.png" alt="ЦНИИмаш, Королёв" loading="lazy">
+        </div>
+
         <ul>
           <li><span class="ru">Сметы на СМР в «Смета.ру» (базы МГЭ, СН, ТСНБ, ФЕР) и по коммерческим расценкам</span><span class="en">Construction estimates in Smeta.ru (MGE, SN, TSNB, FER databases) and commercial rates</span></li>
           <li><span class="ru">Инженерные системы: отопление, вентиляция, водоснабжение, канализация, противодымная защита, противопожарный водопровод, благоустройство</span><span class="en">Engineering systems: heating, ventilation, water supply, sewerage, smoke protection, fire water supply, landscaping</span></li>
@@ -454,6 +556,25 @@
         </ul>
       </div></div>
 
+      <!-- 6. Ministry -->
+      <div class="t-item"><div class="t-card">
+        <div class="t-top"><div class="t-co"><span class="ru">Министерство образования, науки, культуры и спорта РА (ԿԳՍ)</span><span class="en">Ministry of Education, Science, Culture and Sports of RA (MESCS)</span></div><div class="t-date"><span class="ru">2015 — 2017</span><span class="en">2015 — 2017</span></div></div>
+        <div class="t-role"><span class="ru">Инженер-сметчик</span><span class="en">Estimator Engineer</span></div>
+        <div class="t-loc"><span class="ru">Ереван, Армения · Государственный сектор</span><span class="en">Yerevan, Armenia · Public sector</span></div>
+        
+        <div class="t-photos one">
+          <img src="https://images.unsplash.com/photo-1589994965851-a8f479c573a9?auto=format&fit=crop&w=800&q=80" alt="Government Ministry Building Yerevan" loading="lazy">
+        </div>
+
+        <ul>
+          <li><span class="ru">Составление смет на капитальный ремонт школ, детских садов, спортивных и культурных учреждений</span><span class="en">Estimates for major repairs of schools, kindergartens, sports and cultural facilities</span></li>
+          <li><span class="ru">Подготовка тендерной документации и работа с государственными закупками</span><span class="en">Tender documentation and public procurement</span></li>
+          <li><span class="ru">Проверка смет подрядных организаций, контроль объёмов работ</span><span class="en">Verification of contractors' estimates, work-volume control</span></li>
+          <li><span class="ru">Подготовка актов выполненных работ и отчетности для министерства</span><span class="en">Completed-works certificates and reporting for the ministry</span></li>
+        </ul>
+      </div></div>
+
+      <!-- 7. Electric Networks Accountant -->
       <div class="t-item"><div class="t-card">
         <div class="t-top"><div class="t-co"><span class="ru">ЗАО «Эл. сети Армении», филиал «Мусалер»</span><span class="en">Electric Networks of Armenia JSC, Musaler branch</span></div><div class="t-date"><span class="ru">Май 2014 — Октябрь 2014</span><span class="en">May 2014 — Oct 2014</span></div></div>
         <div class="t-role"><span class="ru">Ведущий бухгалтер</span><span class="en">Chief Accountant</span></div>
@@ -465,6 +586,7 @@
         </ul>
       </div></div>
 
+      <!-- 8. Electric Networks Programmer -->
       <div class="t-item"><div class="t-card">
         <div class="t-top"><div class="t-co"><span class="ru">ЗАО «Эл. сети Армении», филиал «Мусалер»</span><span class="en">Electric Networks of Armenia JSC, Musaler branch</span></div><div class="t-date"><span class="ru">Февраль 1998 — Май 2014</span><span class="en">Feb 1998 — May 2014</span></div></div>
         <div class="t-role"><span class="ru">Инженер-программист</span><span class="en">Engineer-Programmer</span></div>
@@ -480,8 +602,78 @@
   </div>
 </section>
 
-<!-- EDUCATION -->
+<!-- RESTORATION PROJECTS -->
 <section class="reveal">
+  <div class="wrap">
+    <h2 class="sec-title"><span class="ru">Проекты реставрации</span><span class="en">Restoration Projects</span></h2>
+    <div class="sec-line"></div>
+    <p class="sec-sub"><span class="ru">Сметное сопровождение восстановления исторических и культурных памятников Армении.</span><span class="en">Estimate support for the restoration of historical and cultural monuments in Armenia.</span></p>
+
+    <div class="rest-group">
+      <h3 class="rest-subtitle"><span class="ru">Проекты Министерства (ԿԳՄՍ)</span><span class="en">Ministry Projects (MESCS)</span></h3>
+      <div class="rest-grid">
+        <div class="rest-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Aruchavank_2023.jpg/640px-Aruchavank_2023.jpg" alt="Аруч" loading="lazy">
+          <div class="rest-info"><h4><span class="ru">Аруч</span><span class="en">Aruch</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div>
+        </div>
+        <div class="rest-card">
+          <img src="https://images.unsplash.com/photo-1599587473628-f5392528a11c?auto=format&fit=crop&w=600&q=80" alt="Багаберд" loading="lazy">
+          <div class="rest-info"><h4><span class="ru">Багаберд</span><span class="en">Baghaberd</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div>
+        </div>
+        <div class="rest-card">
+          <img src="https://images.unsplash.com/photo-1589307357824-22232222688c?auto=format&fit=crop&w=600&q=80" alt="Барабатум" loading="lazy">
+          <div class="rest-info"><h4><span class="ru">Барабатум</span><span class="en">Barabatum</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div>
+        </div>
+        <div class="rest-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Bjni_Fortress_2023.jpg/640px-Bjni_Fortress_2023.jpg" alt="Бджни" loading="lazy">
+          <div class="rest-info"><h4><span class="ru">Бджни</span><span class="en">Bjni</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div>
+        </div>
+        <div class="rest-card">
+          <img src="https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?auto=format&fit=crop&w=600&q=80" alt="Гандзак" loading="lazy">
+          <div class="rest-info"><h4><span class="ru">Гандзак</span><span class="en">Gandzak</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div>
+        </div>
+        <div class="rest-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Garni_Armenia_2023.jpg/640px-Garni_Armenia_2023.jpg" alt="Гарни" loading="lazy">
+          <div class="rest-info"><h4><span class="ru">Гарни (водохранилище)</span><span class="en">Garni Reservoir</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div>
+        </div>
+        <div class="rest-card">
+          <img src="https://images.unsplash.com/photo-1596395349699-5e424881bc2d?auto=format&fit=crop&w=600&q=80" alt="Ерцванк" loading="lazy">
+          <div class="rest-info"><h4><span class="ru">Ерцванк</span><span class="en">Yertsvank</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div>
+        </div>
+        <div class="rest-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Zorats_Karer_2023.jpg/640px-Zorats_Karer_2023.jpg" alt="Зорац Карер" loading="lazy">
+          <div class="rest-info"><h4><span class="ru">Зорац Карер</span><span class="en">Zorats Karer</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div>
+        </div>
+        <div class="rest-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Zvartnots_cathedral_2023.jpg/640px-Zvartnots_cathedral_2023.jpg" alt="Звартноц" loading="lazy">
+          <div class="rest-info"><h4><span class="ru">Звартноц</span><span class="en">Zvartnots</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rest-group">
+      <h3 class="rest-subtitle"><span class="ru">Дополнительные объекты реставрации</span><span class="en">Additional Restoration Projects</span></h3>
+      <div class="rest-grid">
+        <div class="rest-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Pemzashen_Church_2023.jpg/640px-Pemzashen_Church_2023.jpg" alt="Пемзашен" loading="lazy">
+          <div class="rest-info"><h4><span class="ru">Пемзашен</span><span class="en">Pemzashen</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div>
+        </div>
+        <div class="rest-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Kayan_Fortress_2023.jpg/640px-Kayan_Fortress_2023.jpg" alt="Каян Берд" loading="lazy">
+          <div class="rest-info"><h4><span class="ru">Каян Берд</span><span class="en">Kayan Berd</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div>
+        </div>
+        <div class="rest-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Haghpat_Monastery_2023.jpg/640px-Haghpat_Monastery_2023.jpg" alt="Ахпат" loading="lazy">
+          <div class="rest-info"><h4><span class="ru">Ахпат</span><span class="en">Haghpat</span></h4><p><span class="ru">Реставрация</span><span class="en">Restoration</span></p></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="sec-soft reveal">
   <div class="wrap">
     <h2 class="sec-title"><span class="ru">Образование</span><span class="en">Education</span></h2>
     <div class="sec-line"></div>
@@ -496,7 +688,7 @@
 </section>
 
 <!-- SKILLS -->
-<section class="sec-soft reveal">
+<section class="reveal">
   <div class="wrap">
     <h2 class="sec-title"><span class="ru">Навыки</span><span class="en">Skills</span></h2>
     <div class="sec-line"></div>
@@ -540,6 +732,7 @@
         <div class="tags">
           <span class="tag"><span class="ru">Тендеры</span><span class="en">Tenders</span></span>
           <span class="tag"><span class="ru">Госэкспертиза</span><span class="en">State expert review</span></span>
+          <span class="tag"><span class="ru">Госзакупки</span><span class="en">Public procurement</span></span>
           <span class="tag"><span class="ru">Защита смет</span><span class="en">Estimate defense</span></span>
           <span class="tag"><span class="ru">Коммерческие предложения</span><span class="en">Commercial proposals</span></span>
           <span class="tag"><span class="ru">Исполнительность</span><span class="en">Reliability</span></span>
@@ -550,7 +743,7 @@
 </section>
 
 <!-- LANGUAGES -->
-<section class="reveal">
+<section class="sec-soft reveal">
   <div class="wrap">
     <h2 class="sec-title"><span class="ru">Языки</span><span class="en">Languages</span></h2>
     <div class="sec-line"></div>
@@ -572,7 +765,7 @@
 </section>
 
 <!-- CONTACT -->
-<section class="sec-soft reveal">
+<section class="reveal">
   <div class="wrap">
     <div class="contact-card">
       <h3><span class="ru">Свяжитесь со мной</span><span class="en">Get in Touch</span></h3>
@@ -591,7 +784,6 @@
 </footer>
 
 <script>
-  // ---- Language switcher ----
   const btnRu = document.getElementById('btnRu');
   const btnEn = document.getElementById('btnEn');
   function setLang(l){
@@ -611,7 +803,6 @@
   try{ saved = localStorage.getItem('cv-lang') === 'en' ? 'en' : 'ru'; }catch(e){}
   setLang(saved);
 
-  // ---- Reveal on scroll ----
   const io = new IntersectionObserver(es => es.forEach(e => {
     if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
   }), {threshold:.06});
